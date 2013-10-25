@@ -6,7 +6,6 @@
 /typo3conf/temp*
 /uploads/
 /typo3conf/deprecation_*
-/fileadmin/
 /fileadmin/_*
 /fileadmin/user*
 /fileadmin/partner/
