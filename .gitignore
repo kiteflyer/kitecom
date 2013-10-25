@@ -10,9 +10,6 @@
 /fileadmin/partner/
 /typo3conf/l10n/
 /typo3conf/ENABLE_INSTALL_TOOL
-*.jpg
-*.JPG
-*.png
-*.gif
-
+gallery/
+hauptbild/
 
