@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2013-07-30T16:12:57Z" product-name="t3d_kitecom">
+		<header/>
+		<body>
+
+			<trans-unit id="name.description">
+				<source>Name</source>
+			</trans-unit>
+			<trans-unit id="ort.description">
+				<source>Ort</source>
+			</trans-unit>
+			<trans-unit id="stadt.description">
+				<source>Stadt</source>
+			</trans-unit>
+			<trans-unit id="land.description">
+				<source>Land</source>
+			</trans-unit>
+			<trans-unit id="anfaenger.description">
+				<source>Anfänger</source>
+			</trans-unit>
+			<trans-unit id="fortgeschrittene.description">
+				<source>Fortgesschrittene</source>
+			</trans-unit>
+			<trans-unit id="profis.description">
+				<source>Profis</source>
+			</trans-unit>
+			<trans-unit id="hauptbild.description">
+				<source>Hauptbild</source>
+			</trans-unit>
+			<trans-unit id="flachwasser.description">
+				<source>Flachwasser</source>
+			</trans-unit>
+			<trans-unit id="rettungsdienst.description">
+				<source>Rettungsdienst</source>
+			</trans-unit>
+			<trans-unit id="wellen.description">
+				<source>Wellen</source>
+			</trans-unit>
+			<trans-unit id="schule.description">
+				<source>Schule</source>
+			</trans-unit>
+			<trans-unit id="parkplatz.description">
+				<source>Parkplatz</source>
+			</trans-unit>
+			<trans-unit id="startlandehilfe.description">
+				<source>Start / Landehilfe</source>
+			</trans-unit>
+			<trans-unit id="grossereinstieg.description">
+				<source>Grosser Einstieg</source>
+			</trans-unit>
+			<trans-unit id="sandplatz.description">
+				<source>Sandplatz</source>
+			</trans-unit>
+			<trans-unit id="wc.description">
+				<source>WC</source>
+			</trans-unit>
+			<trans-unit id="stehrevier.description">
+				<source>Stehrevier</source>
+			</trans-unit>
+			<trans-unit id="beschreibung.description">
+				<source>Stehrevier</source>
+			</trans-unit>
+			<trans-unit id="regeln.description">
+				<source>Regeln</source>
+			</trans-unit>
+			<trans-unit id="lat.description">
+				<source>Längengrad</source>
+			</trans-unit>
+			<trans-unit id="lng.description">
+				<source>Breitengrad</source>
+			</trans-unit>
+			<trans-unit id="webcam.description">
+				<source>Webcam (URL)</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

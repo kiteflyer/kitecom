@@ -1,0 +1,59 @@
+plugin.tx_ptextbase {
+	view {
+		templateRootPath = {$plugin.tx_ptextbase.view.templateRootPath}
+		partialRootPath = {$plugin.tx_ptextbase.view.partialRootPath}
+		layoutRootPath = {$plugin.tx_ptextbase.view.layoutRootPath}
+	}
+
+	persistence {
+		storagePid = {$plugin.tx_ptextbase.persistence.storagePid}
+	}
+}
+
+
+config.tx_extbase {
+    persistence{
+        enableAutomaticCacheClearing = 1
+        updateReferenceIndex = 0
+        classes {
+			Tx_PtExtbase_Domain_Model_TTContent {
+                mapping {
+                    tableName = tt_content
+                    columns {
+                        lockToDomain.mapOnProperty = lockToDomain
+                    }
+                }
+            }
+
+            Tx_PtExtbase_Domain_Model_Page {
+				mapping {
+					tableName = pages
+					columns {
+						lockToDomain.mapOnProperty = lockToDomain
+					}
+				}
+			}
+
+            Tx_Extbase_Domain_Model_FrontendUser.mapping.recordType >
+            Tx_Extbase_Domain_Model_FrontendUserGroup.mapping.recordType >
+        }
+    }
+}
+
+
+plugin.tx_ptextbase._CSS_DEFAULT_STYLE (
+
+	.tx-extbase-highlight {
+        font-weight:bold;
+        color: #003399;
+    }
+
+    .pt-extbase-groupselector {
+        border: 1px solid #7C7C7C;
+        padding:5px;
+    }
+    
+)
+
+# Dependency Injections
+config.tx_extbase.objects.Tx_PtExtbase_SqlRunner_SqlRunnerInterface.className = Tx_PtExtbase_SqlRunner_Typo3SqlRunner

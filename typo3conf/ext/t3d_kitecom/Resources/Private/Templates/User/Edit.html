@@ -1,0 +1,77 @@
+<f:layout name="Default" />
+
+This template displays a EDIT form for the current domain object.
+
+If you modify this template, do not forget to change the overwrite settings
+in /Configuration/ExtensionBuilder/settings.yaml:
+  Resources:
+    Private:
+      Templates:
+        Edit.html: keep
+
+Otherwise your changes will be overwritten the next time you save the extension in the extension builder
+
+<f:section name="main">
+
+<script>
+jQuery(function() {
+ 
+		//Slider NewEntry
+ $.backstretch([
+ 	"fileadmin/templates/img/bg_newEntry1.jpg",
+ 	"fileadmin/templates/img/bg_newEntry2.jpg",
+ 	"fileadmin/templates/img/bg_newEntry3.jpg"
+ 	], {duration: 6000, fade: 1250});
+
+});				
+</script>
+
+
+<div class="row-fluid">
+	<div id="new_overlay" class="span12">
+		
+		<div class="row-fluid">
+			<div class="span12">
+				<div id="new">
+					<h1 class="big shadow"><i class="icon-user blue headerbox"></i>Profil bearbeiten</h1>
+					<div class="clear"></div>
+
+
+					<f:form noCache="1" noCacheHash="1" method="post" controller="User" action="update" name="user" object="{user}" class="form-horizontal form-edit-user"> 
+						<f:render partial="User/MyFields" arguments="{object:user, sprachen:sprachen, zeiten:zeiten}" />	
+						<div class="submit_btn">
+						<f:form.submit value=" Speichern" class="btn-orange form-new" />
+						</div>
+					</f:form>			
+					
+					
+					<div class="contentbox shadow" id="hauptbild_school">
+						<h2 class="small shadow gray">Hauptbild</h2>
+						<div id="upload_hauptbild" class="span12" data-uid="{user.uid}" data-cat="User" data-user="{user.uid}" data-section="hauptbild">
+								<f:render partial="User/Hauptbild" arguments="{uid:user.uid, cat:'User', user:user.uid, section:'hauptbild'}" />
+						</div>					
+					</div>							
+	
+					<div class="contentbox shadow" id="media">
+						<h2 class="small shadow gray">Bildergallery</h2>
+						<div id="upload_gallery" class="span12" data-uid="{user.uid}" data-cat="User" data-user="{user.uid}" data-section="gallery">
+							<f:render partial="User/Bildupload" arguments="{uid:user.uid, cat:'User', user:user.uid, section:'gallery'}" />
+						</div>					
+
+						<div class="contentbox_border"></div>	
+					</div>						
+					
+				</div>
+			</div>
+		</div>
+		
+	
+		
+	</div>	
+</div>
+</div><!-- add -->
+
+
+
+</f:section>
+

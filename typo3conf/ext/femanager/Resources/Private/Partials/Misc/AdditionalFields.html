@@ -1,0 +1,27 @@
+<div class="hidden" style="display: none;">
+	<f:comment>
+		This is the current sys_language_uid to set the fe language for ajax calls
+	</f:comment>
+	<input type="hidden" id="femanagerLanguage" value="{languageUid}" />
+
+	<f:comment>
+		This is the storage pid for ajax calls (know where to search in db)
+	</f:comment>
+	<input type="hidden" id="femanagerStoragePid" value="{storagePid}" />
+
+	<f:comment>
+		This is the current pid for ajax calls (know TypoScript)
+	</f:comment>
+	<input type="hidden" id="femanagerPid" value="{Pid}" />
+
+	<f:comment>
+		This is the container for javascript validation messages above the fields
+	</f:comment>
+	<div class="femanager_validation_container">
+		<div class="alert alert-error">
+			<button type="button" class="close" data-dismiss="alert">&times;</button>
+			<h4><f:translate key="validationError" /></h4>
+			<![CDATA[{messages}]]>
+		</div>
+	</div>
+</div>

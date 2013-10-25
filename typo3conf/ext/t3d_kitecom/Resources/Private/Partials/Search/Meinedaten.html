@@ -1,0 +1,11 @@
+<div class="btn-group limitview" data-toggle="buttons-radio">
+    <button type="button" name="limitview" class="btn btn_radio btn_all active" data-limit=""><i class="icon-group"></i> Alle</button>
+	<f:security.ifAuthenticated>
+		<f:then>
+			<button type="button" name="limitview" class="btn btn_radio btn_my" data-limit="me"><i class="icon-user"></i> Meine</button>
+		</f:then>
+		<f:else>
+			<div class="usernav pull-left"><a class="btn usernav btn_radio btn_my" href="#login_window" data-toggle="modal" role="button"><i class="icon-user"></i> Meine</a></div>
+		</f:else>
+	</f:security.ifAuthenticated>
+</div>

@@ -1,0 +1,7 @@
+includeLibs.image_crop = EXT:image_crop/pi1/class.tx_imagecrop_pi1.php
+tt_content.image.20.1.stdWrap.postUserFunc = tx_imagecrop_pi1->main
+
+# this is for testing, but unfortunately does not work properly
+# tt_content.image.20.1.file {
+# 	params = -gravity northwest -crop 200x200+0+0 -colorspace rgb
+# }

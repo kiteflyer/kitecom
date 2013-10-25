@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<T3locallang>
+	<meta type="array">
+		<type>module</type>
+		<description>Language labels for the ITS Ajax rsa Loginbox v2 extension in the FRONTEND</description>
+	</meta>
+	<data type="array">
+		<languageKey index="default" type="array">
+			<label index="its_login.pi_flexform.sheet_general">General</label>
+			<label index="its_login.pi_flexform.feuser_store">FE User Folder</label>
+			<label index="its_login.pi_flexform.registerpage">Register Page</label>
+			<label index="its_login.pi_flexform.fe_loginpage">Fe_Login Page</label>
+			<label index="its_login.pi_flexform.logoutredirectpage">Redirect on logout page</label>
+			<label index="its_login.pi_flexform.lostpasswordlink">Lost password page</label>
+			<label index="its_login.pi_flexform.lostpasswordlinkparams">Lost password link params</label>			
+		</languageKey>
+		<languageKey index="de" type="array">
+			<label index="its_login.pi_flexform.sheet_general">Allgemein</label>
+			<label index="its_login.pi_flexform.feuser_store">FE User Ordner</label>
+			<label index="its_login.pi_flexform.registerpage">Registrierungsseite</label>
+			<label index="its_login.pi_flexform.fe_loginpage">Fe Login Seite</label>
+			<label index="its_login.pi_flexform.logoutredirectpage">Umleitung beim Logout Seite</label>
+			<label index="its_login.pi_flexform.lostpasswordlink">Passwort zurücksetzten Seite</label>
+			<label index="its_login.pi_flexform.lostpasswordlinkparams">Password zurücksetzten Link Parameter</label>
+		</languageKey>
+	</data>
+</T3locallang>

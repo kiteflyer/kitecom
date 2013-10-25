@@ -1,0 +1,43 @@
+<f:layout name="Default" />
+
+This template displays a NEW form for the current domain object.
+
+If you modify this template, do not forget to change the overwrite settings
+in /Configuration/ExtensionBuilder/settings.yaml:
+  Resources:
+    Private:
+      Templates:
+        New.html: keep
+
+Otherwise your changes will be overwritten the next time you save the extension in the extension builder
+
+<f:section name="main">
+<script src="fileadmin/templates/js/jquery.backstretch.min.js"></script>
+<script>
+jQuery(function() {
+ 
+		//Slider NewEntry
+ $.backstretch([
+ 	"fileadmin/templates/img/bg_newEntry1.jpg",
+ 	"fileadmin/templates/img/bg_newEntry2.jpg",
+ 	"fileadmin/templates/img/bg_newEntry3.jpg"
+ 	], {duration: 6000, fade: 1250});
+
+});				
+</script>
+<div class="row">
+	<div id="new_overlay" class="span7 gray_overlay">
+		<div id="new">
+			<h1 class="big shadow"><i class="icon-map-marker green headerbox"></i>Spot erfassen</h1>
+			<div class="clear"></div>
+			<!--<f:render partial="FormErrors" arguments="{object:Spot}"/>-->
+
+			<f:form action="create"  enctype="multipart/form-data"  name="newSpot" object="{newSpot}">
+			<f:render partial="Spot/MyFields" />
+					<f:form.submit value=" Speichern" class="btn-orange form-new" />
+			</f:form>
+		</div>
+	</div>
+</div>
+			
+</f:section>

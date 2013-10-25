@@ -1,0 +1,150 @@
+@charset 'utf-8';
+
+/****************************/
+/*** datamints feuser CSS ***/
+/****************************/
+
+.tx-datamintsfeuser-pi1 {
+	margin-bottom: 20px;
+}
+
+.tx-datamintsfeuser-pi1 .clearfix {
+	zoom: 1;
+}
+
+.tx-datamintsfeuser-pi1 .clearfix:after,
+.tx-datamintsfeuser-pi1 .clearfix:before {
+	content: '';
+	display: table;
+}
+
+.tx-datamintsfeuser-pi1 .clearfix:after {
+	clear: both;
+}
+
+/*** Form and Fields ***/
+.tx-datamintsfeuser-pi1 form {
+	margin: 0;
+	padding: 0;
+}
+.tx-datamintsfeuser-pi1 fieldset {
+	margin-bottom: 20px;
+	padding: 10px;
+	border: 1px solid #ccc;
+}
+.tx-datamintsfeuser-pi1 .item {
+	margin-bottom: 10px;
+}
+.tx-datamintsfeuser-pi1 label {
+	width: 160px;
+	margin-right: 10px;
+	float: left;
+	display: block;
+}
+.tx-datamintsfeuser-pi1 input,
+.tx-datamintsfeuser-pi1 select,
+.tx-datamintsfeuser-pi1 textarea {
+	width: 300px;
+}
+.tx-datamintsfeuser-pi1 select {
+	max-height: 100px;
+}
+.tx-datamintsfeuser-pi1 .type-check input {
+	width: auto;
+}
+.tx-datamintsfeuser-pi1 .list {
+	margin-left: 170px;
+}
+.tx-datamintsfeuser-pi1 .list .item label {
+	width: auto;
+	float: none;
+	display: inline;
+	vertical-align: middle;
+}
+.tx-datamintsfeuser-pi1 .list .item input {
+	width: auto;
+	margin-right: 4px;
+	vertical-align: middle;
+}
+.tx-datamintsfeuser-pi1 .type-check .item,
+.tx-datamintsfeuser-pi1 .type-group .item,
+.tx-datamintsfeuser-pi1 .type-radio .item,
+.tx-datamintsfeuser-pi1 .type-select .item {
+	margin-bottom: 4px;
+}
+.tx-datamintsfeuser-pi1 .type-check .item {
+	float: left;
+}
+.tx-datamintsfeuser-pi1 .type-group .item .link,
+.tx-datamintsfeuser-pi1 .type-group .item .thumb,
+.tx-datamintsfeuser-pi1 .type-group .item .upload,
+.tx-datamintsfeuser-pi1 .type-group .item .delete {
+	margin-bottom: 4px;
+}
+.tx-datamintsfeuser-pi1 .type-group .item .thumb {
+	width: 100px;
+	margin-right: 10px;
+	float: left;
+}
+.tx-datamintsfeuser-pi1 .type-group .item .thumb.none {
+	background-color: #dedede;
+}
+.tx-datamintsfeuser-pi1 .type-group .item .thumb.none:before {
+    content: '?';
+	height: 30px;
+    margin-top: 14px;
+	cursor: default;
+    display: block;
+	color: #fff;
+    font-size: 40px;
+	text-align: center;
+}
+.tx-datamintsfeuser-pi1 .type-group .item .upload,
+.tx-datamintsfeuser-pi1 .type-group .item .delete {
+	float: left;
+}
+.tx-datamintsfeuser-pi1 .name-captcha .captcha {
+	display: inline;
+	margin-right: 20px;
+}
+.tx-datamintsfeuser-pi1 .name-captcha .captcha img {
+	vertical-align: middle;
+}
+.tx-datamintsfeuser-pi1 .name-captcha input {
+	width: 100px;
+	vertical-align: middle;
+}
+.tx-datamintsfeuser-pi1 .name-submit {
+	margin-top: 20px;
+}
+.tx-datamintsfeuser-pi1 .name-submit input {
+	width: auto;
+	margin-left: 170px;
+}
+/*
+.tx-datamintsfeuser-pi1 .list {
+	height: 18px;
+	margin: 8px;
+	border: 1px solid #ccc;
+	padding: 6px;
+	background-color: #fafafa;
+}
+.tx-datamintsfeuser-pi1 .list label {
+	width: auto;
+}
+.tx-datamintsfeuser-pi1 .list input {
+	float: right;
+}
+*/
+
+/*** Error - Messages ***/
+.tx-datamintsfeuser-pi1 .error-label {
+	margin-top: 4px;
+	padding-left: 20px;
+	clear: both;
+	color: #a20;
+	font-weight: bold;
+	background-image: url('arrow_red_up.png');
+	background-repeat: no-repeat;
+	background-position: left top;
+}

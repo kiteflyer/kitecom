@@ -1,0 +1,36 @@
+<T3DataStructure>
+	<sheets>
+		<sDEF>
+			<ROOT>
+				<TCEforms>
+					<sheetTitle>Function</sheetTitle>
+				</TCEforms>
+				<type>array</type>
+				<el>
+					<switchableControllerActions>
+						<TCEforms>
+							<label>Select function</label>
+							<config>
+								<type>select</type>
+								<items>
+									<numIndex index="0">
+										<numIndex index="0">Neue Schule</numIndex>
+										<numIndex index="1">Schule->new;Schule->create</numIndex>
+									</numIndex>
+									<numIndex index="1">
+										<numIndex index="0">List Schule</numIndex>
+										<numIndex index="1">Schule->list;Schule->new;Schule->create;Schule->edit;Schule->update;Schule->show</numIndex>
+									</numIndex>
+									<numIndex index="2">
+										<numIndex index="0">Show Schule</numIndex>
+										<numIndex index="1">Schule->show</numIndex>
+									</numIndex>
+								</items>
+							</config>
+						</TCEforms>
+					</switchableControllerActions>
+				</el>
+			</ROOT>
+		</sDEF>
+	</sheets>
+</T3DataStructure>

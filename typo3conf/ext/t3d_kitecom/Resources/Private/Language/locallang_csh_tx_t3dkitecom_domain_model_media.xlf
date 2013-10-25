@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2013-10-11T09:54:34Z" product-name="t3d_kitecom">
+		<header/>
+		<body>
+
+			<trans-unit id="userid.description">
+				<source>User UID</source>
+			</trans-unit>
+			<trans-unit id="katid.description">
+				<source>Kategorie UID</source>
+			</trans-unit>
+			<trans-unit id="elid.description">
+				<source>Element UID</source>
+			</trans-unit>
+			<trans-unit id="name.description">
+				<source>Filename</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

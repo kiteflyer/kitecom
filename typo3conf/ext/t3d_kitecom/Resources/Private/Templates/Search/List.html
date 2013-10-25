@@ -1,0 +1,72 @@
+<!-- Detail and Preview -->
+<f:render partial="Search/DetailPreview.html" />
+
+<div id="loading"></div>
+<div id="map_full" style="display:none;">	
+<div id="map_nav"></div>
+</div>
+<div id="container" class="hideForDetail">
+</div>
+<div id="list" class="hideForDetail span6"></div>
+
+
+
+
+<script src="fileadmin/templates/js/jquery.isotope.min.js"></script>
+<link href="fileadmin/templates/css/isotope.css" type="text/css"></link> 
+
+
+<!-- Suchinfos -->
+<f:render partial="Search/SearchInfoModal.html" />
+<script type="text/javascript" src="typo3conf/ext/t3d_kitecom/Resources/Public/Js/ajax.js"></script>
+
+
+
+
+
+
+<script>
+
+<f:if condition="{searchresult.who}">	
+		<f:then>	
+				$('#who').val('{searchresult.who}');		 
+		</f:then>
+</f:if>
+
+
+<f:if condition="{searchresult.where}"> 	
+		<f:then>
+				$('#where').val('{searchresult.where}');		 
+		</f:then>
+</f:if>		
+
+
+<f:if condition="{searchresult.show}">
+	<f:then>
+	</f:then>
+	<f:else>
+		$('.btn-group.category input').prop('checked', false);
+		$('.btn-group.category label').removeClass('active');
+	</f:else>
+</f:if>
+
+<f:for each="{searchresult.show}" as="result">
+    $('#check_{result}').prop('checked', true);
+    $('#check_{result}').next().addClass('active')
+</f:for>
+
+
+//Make Filterarray ready
+resetFilters();	
+
+	
+$( document ).ready(function() {
+	address='{searchresult.where}';
+	$('#search .btn-gray').trigger('click');		 
+	
+});
+	
+</script>
+
+
+

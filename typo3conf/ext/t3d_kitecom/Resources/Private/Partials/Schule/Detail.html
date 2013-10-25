@@ -1,0 +1,349 @@
+<div class="detail">
+
+<div class="row-fluid">
+	<div class="span4">
+		<h1 class="big shadow"><i class="icon-bullhorn pink headerbox"></i> {schule.name}</h1>
+	</div>
+	<div class="span2 pull-right">
+		<div class="icons">
+			<div class="pull-right userinteraction">
+					<i class="icon-heart"></i> {schule.likes}
+					<i class="icon-flag"></i> {schule.wasthere}
+					<i class="icon-group"></i> {schule.student}							
+					<i class="icon-bookmark"></i> {schule.favorite}
+			</div>			
+			
+		</div>
+	</div>	
+</div>
+
+<div class="row-fluid navi">
+	<div class="span10">
+		<div class="detail_nav" >
+			<ul data-offset-top="5" class="nav">
+				<li><a href="#bilder">Bilder</a></li>
+				<li><a href="#beschreibung">Service / Infos</a></li>				
+				<li><a href="#material">Material</a></li>
+				<li><a href="#wind">Wind / Wetter</a></li>
+				<li><a href="#team">Team</a></li>
+				<li><a href="#besucher">Besucher</a></li>
+				<!--<li><a href="#umgebung">Umgebung</a></li>
+				<li><a href="#kurse">Kurse</a></li>-->
+				<li><a href="#kommentare">Kommentare</a></li>
+			</ul>
+		</div>
+	</div>
+
+</div>
+
+<div class="fluid-container" id="bgimages">
+<div class="row-fluid">
+
+<div id="bilder" class="fotorama" data-width="100%" data-keyboard="true" data-arrows="true" data-click="true" data-swipe="true" data-trackpad="true" data-ratio="3/2" data-min-height="300" data-max-height="408" data-allow-full-screen="native" data-fit="cover" data-nav="thumbs" data-keyboard="true" data-autoplay="true" data-transition="slide">
+ 	<f:for each="{schule.images}" as="image">
+ 		<img src="fileadmin/fileupload/server/php/{image.userid}/{image.katid}/{image.elid}/gallery/{image.name}" alt="{image.name}">
+ 	</f:for>
+ 	<div class="progress_bar"></div>
+</div>
+	<f:comment>
+	<div id="upload_gallery" class="span12" data-uid="{schule.uid}" data-cat="Schule" data-user="3" data-section="gallery">
+		<f:render partial="Schule/Bildupload" arguments="{uid:schule.uid, cat:'Schule', user:3, section:'gallery'}" />
+	</div>
+	</f:comment>
+</div>
+<div class="row-fluid">
+	<div class="span12">
+		<div class="row-fluid">
+			<div class="span9">
+				
+				<section id="beschreibung">
+					<div class="flag"><p class="pull-right">Service / Infos <i class="icon-flag"></i></p></div>
+					<h2 class="small gray"><f:translate key="tx_t3dkitecom_domain_model_schule.beschreibung" /></h2>
+					<div class="row-fluid">
+						<div class="pull-left" style="margin-right: 20px;">
+							<img class="thumbnail" src="fileadmin/fileupload/server/php/{schule.hauptbild}" alt="{schule.name}">
+						</div>
+						<div class="pull-left">
+							<br>{schule.beschreibung}
+						</div>
+					</div>
+				</section>
+				
+
+				<section id="material">
+					<div class="flag"><p class="pull-right">Material <i class="icon-flag"></i></p></div>
+					<div class="row-fluid">
+						<div class="span3">
+							<h2 class="small gray"><f:translate key="tx_t3dkitecom_domain_model_schule.verleihmaterial" /></h2>				
+							<br>{schule.verleihmaterial}
+						</div>
+						<div class="span3">
+							<h2 class="small gray"><f:translate key="tx_t3dkitecom_domain_model_schule.schulungsmaterial" /></h2>				
+							<br>{schule.schulungsmaterial}
+						</div>
+						<div class="span3">
+							<h2 class="small gray"><f:translate key="tx_t3dkitecom_domain_model_schule.hauptmarke" /></h2>				
+							<br>{schule.hauptmarke}
+						</div>						
+					</div>
+				</section>
+
+				
+				<section id="wind">
+					<div class="flag"><p class="pull-right">Wind / Wetter <i class="icon-flag"></i></p></div>				
+					<div class="row-fluid">
+						<f:render partial="Wetter/Wetter" arguments="{wetter:wetter}" />
+					</div>
+				</section>
+		
+				
+				<f:comment>
+				<section id="team">
+					<div class="flag"><p class="pull-right">Team <i class="icon-flag"></i></p></div>				
+					<h2 class="small gray">Unser Team</h2>
+					<br>
+				</section>
+				</f:comment>
+				
+				<section id="besucher">
+					<div class="flag"><p class="pull-right">Besucher <i class="icon-flag"></i></p></div>					
+					<div class="row-fluid">
+						<div class="span6">
+							<h2 class="small gray">Schüler <span class="badge count">{result.student}</span></h2>
+							<br>
+							<div class="users">
+								<f:for each="{besucher.student}" as="users">
+									<div class="thumbnail user" style="width: 60px;">
+										<f:image src="fileadmin/fileupload/server/php/{users.hauptbild}" width="50c" height="50c" alt="{image.name}" class="goDetail" additionalAttributes="{data-show:'user',data-uid:users.userid}" />
+									</div>
+								</f:for>
+							</div>
+						</div>
+						<div class="span6">
+							<h2 class="small gray">Besucher <span class="badge count">{result.wasthere}</span></h2>
+							<br>
+							<div class="users">
+								<f:for each="{besucher.wasthere}" as="users">
+									<div class="thumbnail user" style="width: 60px;">
+										<f:image src="fileadmin/fileupload/server/php/{users.hauptbild}" width="50c" height="50c" alt="{image.name}" class="goDetail" additionalAttributes="{data-show:'user',data-uid:users.userid}" />
+									</div>
+								</f:for>
+							</div>
+						</div>						
+					</div>				
+				</section>
+				
+				<f:comment>
+					<div class="flag"><p id="umgebung" class="pull-right">Umgebung <i class="icon-flag"></i></p></div>						
+					<h2 class="small gray"></h2>
+					<div class="flag"><p id="kurse" class="pull-right">Kurse <i class="icon-flag"></i></p></div>										
+
+				</f:comment>
+				
+				<section id="kommentare">
+					<div class="flag"><p class="pull-right">Kommentare <i class="icon-flag"></i></p></div>					
+					<div class="row-fluid">
+						<br>
+						<div id="disqus_thread"></div>
+					<f:security.ifAuthenticated><f:then>						
+						
+					    <script type="text/javascript">
+
+							var disqus_config = function() {
+								this.page.remote_auth_s3 = '{disqus.message} {disqus.hmac} {disqus.timestamp}';
+								this.page.api_key = 'CduDazJDXhAfeJ2cIADvFfRjo9JdavYo3IrvHvtpvVx84hbY4F0jBaQVyyGZilKC';
+							}
+
+					        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+					        var disqus_shortname = 'kitecom'; // required: replace example with your forum shortname
+					
+					        /* * * DON'T EDIT BELOW THIS LINE * * */
+					        (function() {
+					            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+					            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+					            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+					        })();
+					    </script>
+					</f:then>
+					<f:else>
+						Sie müssen Sich anmelden um Kommentare zu schreiben.
+					</f:else>
+					
+					</f:security.ifAuthenticated>
+					    
+					</div>
+				</section>				
+				
+				
+				
+				
+			</div>
+			<div class="span3 pull-right" style="position:relative;">
+				<div class="trenner_right pull-left"></div>			
+				<div id="rightCol" class="right pull-right">
+				<section id="service">
+					<h2 class="small gray">Service</h2>
+				    <div class="attribute">
+						<div class="attribut{schule.rettungsdienst}"><f:if condition="{schule.rettungsdienst}"><f:then><i class="icon-ok-sign"></i></f:then><f:else><i class="icon-minus-sign"></i></f:else></f:if> Rettungsdienst</div>
+						<div class="attribut{schule.strandhelfer}"><f:if condition="{schule.strandhelfer}"><f:then><i class="icon-ok-sign"></i></f:then><f:else><i class="icon-minus-sign"></i></f:else></f:if> Strandhelfer</div>
+						<div class="attribut{schule.prokiter}"><f:if condition="{schule.prokiter}"><f:then><i class="icon-ok-sign"></i></f:then><f:else><i class="icon-minus-sign"></i></f:else></f:if> Prokiter als Lehrer</div>
+						<div class="attribut{schule.kitesafari}"><f:if condition="{schule.kitesafari}"><f:then><i class="icon-ok-sign"></i></f:then><f:else><i class="icon-minus-sign"></i></f:else></f:if> Kitesafari</div>
+						<div class="attribut{schule.flachwasser}"><f:if condition="{schule.flachwasser}"><f:then><i class="icon-ok-sign"></i></f:then><f:else><i class="icon-minus-sign"></i></f:else></f:if> Flachwasser</div>			
+						<div class="attribut{schule.fotoservice}"><f:if condition="{schule.fotoservice}"><f:then><i class="icon-ok-sign"></i></f:then><f:else><i class="icon-minus-sign"></i></f:else></f:if> Fotoservice</div>						
+						<div class="attribut{schule.lager}"><f:if condition="{schule.lager}"><f:then><i class="icon-ok-sign"></i></f:then><f:else><i class="icon-minus-sign"></i></f:else></f:if> Lagermöglichkeiten</div>									
+						<div class="attribut{schule.materialmiete}"><f:if condition="{schule.materialmiete}"><f:then><i class="icon-ok-sign"></i></f:then><f:else><i class="icon-minus-sign"></i></f:else></f:if> Materialmiete</div>									
+						<div class="attribut{schule.stehrevier}"><f:if condition="{schule.stehrevier}"><f:then><i class="icon-ok-sign"></i></f:then><f:else><i class="icon-minus-sign"></i></f:else></f:if> Stehrevier</div>															
+						<div class="attribut{schule.shop}"><f:if condition="{schule.shop}"><f:then><i class="icon-ok-sign"></i></f:then><f:else><i class="icon-minus-sign"></i></f:else></f:if> Shop</div>																		
+				    </div>
+				</section>
+				
+				<h2 class="small gray">Sprachen</h2>
+					  <f:form.select property="sprachen" name="sprachen" multiple="true" options="{sprachen}" value="{schule.sprachen}" class="chosen-select" optionLabelField="name"  optionValueField="uid" />
+				<h2 class="small gray">Öffnungszeiten</h2>
+					<f:form.select property="zeiten" name="zeiten" multiple="true" options="{zeiten}" value="{schule.zeiten}" class="chosen-select" optionLabelField="name" optionValueField="uid" />					
+			    <br>
+			    <h2 class="small gray">Koordinaten</h2>
+			    <div class="span12" id="singleMap"></div>
+			    <div class="koordinaten">
+				    <div>{schule.lat}, {schule.lng}</div>
+					<br>
+				    <div>
+					{schule.ort} {schule.stadt} {schule.land}<br>
+					{schule.adresse}<br>
+				    </div>
+					<br>
+					<div>
+					<i class="icon-phone"></i> {schule.tel}<br>
+					<i class="icon-envelope-alt"></i> {schule.email}<br>
+					<i class="icon-globe"></i> {schule.url}<br>
+					</div>
+			    </div>
+
+
+				
+					<f:comment>
+					<f:security.ifAuthenticated><f:then>
+					<f:if condition="{schule.myRating.likes} < 1">
+						<f:then>
+				<p><a href="#" class="iLike btn orange" data-state="1" data-uid="{schule.uid}" data-show="school"><i class="icon-heart"></i> Like</a></p>			
+						</f:then>
+						<f:else>
+							<p><a href="#" class="iLike btn orange" data-state="0" data-uid="{schule.uid}" data-show="school"><i class="icon-heart"></i> Like <i class="icon-minus-sign"></i></a></p>		
+						</f:else>
+					</f:if>
+					<f:if condition="{schule.myRating.wasthere} < 1">
+						<f:then>
+								<p><a href="#" class="myVisitedPlace btn orange" data-state="1" data-uid="{schule.uid}" data-show="school"><i class="icon-flag"></i> Ich war hier</a></p>
+						</f:then>
+						<f:else>
+							<p><a href="#" class="myVisitedPlace btn orange" data-state="0" data-uid="{schule.uid}" data-show="school"><i class="icon-flag"></i> Ich war hier <i class="icon-minus-sign"></i></a></p>
+						</f:else>
+					</f:if>	
+					<f:if condition="{schule.myRating.student} < 1">
+						<f:then>
+							<p><a href="#" class="myStudy btn orange" data-state="1" data-uid="{schule.uid}" data-show="school"><i class="icon-group"></i> Ich war Schüler</a></p>
+						</f:then>
+						<f:else>
+							<p><a href="#" class="myStudy btn orange" data-state="0" data-uid="{schule.uid}" data-show="school"><i class="icon-group"></i> Ich war Schüler <i class="icon-minus-sign"></i></a></p>
+						</f:else>
+					</f:if>	
+					<f:if condition="{schule.myRating.favorite} < 1">
+						<f:then>
+							<p><a href="#" class="myFavorit btn orange" data-state="1" data-uid="{schule.uid}" data-show="school"><i class="icon-bookmark"></i> Mein Favorit</a></p>
+						</f:then>
+						<f:else>
+							<p><a href="#" class="myFavorit btn orange" data-state="0" data-uid="{schule.uid}" data-show="school"><i class="icon-bookmark"></i> Mein Favorit <i class="icon-minus-sign"></i></a></p>
+						</f:else>
+					</f:if>
+				</f:then></f:security.ifAuthenticated>
+					</f:comment>
+				
+				</div>
+			</div>				
+		</div>
+	</div>
+</div>
+</div>
+</div>
+
+<script>
+
+
+
+	jQuery(function() {
+	
+
+		//Detailseite
+
+	    $('.detail_nav ul li a').bind('click', function(e) {
+	        e.preventDefault();
+	        var height = $(this.hash).offset().top;
+	        height = parseInt(height)-75;
+	        $('html,body').animate({scrollTop: height});                                                         
+	        return false;
+	    });	
+		  	
+		$('#detailPage').scrollspy({ target: '.detail_nav ul li a' });		  	
+
+	});	
+	
+	$(document).ready(function(){
+
+	    var map;
+		var lat = {schule.lat}
+		var lng = {schule.lng}		
+	    var myLatlng = new google.maps.LatLng(lat,lng);
+	    var mapOptions = {
+	        center: myLatlng, // Set our point as the centre location
+	        zoom: 13, // Set the zoom level
+			maxZoom: 14,
+	    };
+	    bounds = new google.maps.LatLngBounds();
+	    bounds.extend(myLatlng);
+        
+	    // Display a map on the page
+	    map = new google.maps.Map(document.getElementById("singleMap"), mapOptions);
+	
+	    // Add a marker to the map based on our coordinates
+	    var marker = new google.maps.Marker({
+	        position: myLatlng,
+			icon: '/fileadmin/templates/img/icon_schule.png',
+	        map: map
+	    });	
+	    
+	   
+		setTimeout(function(){
+		    $('#singleMap').width = '100%';
+		    $('#singleMap').height = '280px';
+		    google.maps.event.trigger(map, 'resize');
+		    map.setZoom(map.getZoom());
+			map.fitBounds(bounds);	
+		}, 3000);
+	
+	
+		
+		$('.detail_nav .nav').affix({
+            offset: 127
+		});
+
+	
+		$(".chosen-select").chosen({width: "95%","disable_search": true}); 
+		$('.search-field').remove();
+		$('.chosen-drop').remove();	
+		$('.search-choice-close').remove();	
+
+
+	});
+	
+/*
+ $("#bgimages").backstretch([
+ 	<f:for each="{schule.images}" as="image">
+ 		"fileadmin/fileupload/server/php/{image.userid}/{image.katid}/{image.elid}/gallery/{image.name}",
+ 	</f:for>
+ 	], {duration: 6000, fade: 1250});
+*/
+	
+</script>
+
+
+

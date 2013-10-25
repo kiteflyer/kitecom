@@ -1,5 +1,4 @@
 /typo3temp/
-/typo3conf/
 /t3lib/
 /typo3/
 /typo3_src/
@@ -10,6 +9,7 @@
 /fileadmin/user*
 /fileadmin/partner/
 /typo3conf/l10n/
+/typo3conf/ENABLE_INSTALL_TOOL
 *.jpg
 *.JPG
 *.png

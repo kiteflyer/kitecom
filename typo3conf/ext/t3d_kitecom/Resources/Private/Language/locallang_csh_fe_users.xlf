@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2013-10-11T09:54:35Z" product-name="t3d_kitecom">
+		<header/>
+		<body>
+
+			<trans-unit id="lat.description">
+				<source>lat</source>
+			</trans-unit>
+			<trans-unit id="lng.description">
+				<source>lng</source>
+			</trans-unit>
+			<trans-unit id="suche.description">
+				<source>In der Suche anzeigen?</source>
+			</trans-unit>
+			<trans-unit id="ort.description">
+				<source>Ort</source>
+			</trans-unit>
+			<trans-unit id="stadt.description">
+				<source>Stadt</source>
+			</trans-unit>
+			<trans-unit id="land.description">
+				<source>Land</source>
+			</trans-unit>
+			<trans-unit id="newsletter.description">
+				<source>Newsletter aktivieren?</source>
+			</trans-unit>
+			<trans-unit id="schlafmoeglichkeit.description">
+				<source>Biete Schlafmöglichkeit</source>
+			</trans-unit>
+			<trans-unit id="lieblingsmakre.description">
+				<source>Meine Lieblingsmarke</source>
+			</trans-unit>
+			<trans-unit id="lieblingsspot.description">
+				<source>Mein Lieblingsspot</source>
+			</trans-unit>
+			<trans-unit id="hausspot.description">
+				<source>Mein Hausspot (Local)</source>
+			</trans-unit>
+			<trans-unit id="jobsearch.description">
+				<source>Suche Job</source>
+			</trans-unit>
+			<trans-unit id="company.description">
+				<source>Aktueller Arbeitsgeber</source>
+			</trans-unit>
+			<trans-unit id="lastcompany.description">
+				<source>Letzter Arbeitsgeber</source>
+			</trans-unit>
+			<trans-unit id="lieblinkskite.description">
+				<source>Lieblingskite</source>
+			</trans-unit>
+			<trans-unit id="geburtsdatum.description">
+				<source>Geburtsdatum</source>
+			</trans-unit>
+			<trans-unit id="hauptbild.description">
+				<source>Hauptbild</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

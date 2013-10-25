@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2013-08-03T19:18:02Z" product-name="t3d_kitecom">
+		<header/>
+		<body>
+
+			<trans-unit id="tx_t3dkitecom_domain_model_schule">
+				<source>Schule</source>
+			</trans-unit>
+			<trans-unit id="tx_t3dkitecom_domain_model_schule.name">
+				<source>Name</source>
+			</trans-unit>
+			<trans-unit id="tx_t3dkitecom_domain_model_schule.beschreibung">
+				<source>Beschreibung</source>
+			</trans-unit>
+			<trans-unit id="tx_t3dkitecom_domain_model_schule.ort">
+				<source>Ort</source>
+			</trans-unit>
+			<trans-unit id="tx_t3dkitecom_domain_model_schule.lat">
+				<source>Lat</source>
+			</trans-unit>
+			<trans-unit id="tx_t3dkitecom_domain_model_schule.lng">
+				<source>Lng</source>
+			</trans-unit>
+			<trans-unit id="tx_t3dkitecom_domain_model_schule.rettungsdienst">
+				<source>Rettungsdienst</source>
+			</trans-unit>
+			<trans-unit id="tx_t3dkitecom_domain_model_schule.strandhelfer">
+				<source>Strandhelfer</source>
+			</trans-unit>
+			<trans-unit id="tx_t3dkitecom_domain_model_schule.prokiter">
+				<source>Prokiter</source>
+			</trans-unit>
+			<trans-unit id="tx_t3dkitecom_domain_model_schule.kitesafari">
+				<source>Kitesafari</source>
+			</trans-unit>
+			<trans-unit id="tx_t3dkitecom_domain_model_schule.flachwasser">
+				<source>Flachwasser</source>
+			</trans-unit>
+			<trans-unit id="tx_t3dkitecom_domain_model_schule.fotoservice">
+				<source>Fotoservice</source>
+			</trans-unit>
+			<trans-unit id="tx_t3dkitecom_domain_model_schule.lager">
+				<source>Lager</source>
+			</trans-unit>
+			<trans-unit id="tx_t3dkitecom_domain_model_schule.materialmiete">
+				<source>Materialmiete</source>
+			</trans-unit>
+			<trans-unit id="tx_t3dkitecom_domain_model_schule.stehrevier">
+				<source>Stehrevier</source>
+			</trans-unit>
+			<trans-unit id="tx_t3dkitecom_domain_model_schule.shop">
+				<source>Shop</source>
+			</trans-unit>
+			<trans-unit id="tx_t3dkitecom_domain_model_schule.schulungsmaterial">
+				<source>Schulungsmaterial</source>
+			</trans-unit>
+			<trans-unit id="tx_t3dkitecom_domain_model_schule.verleihmaterial">
+				<source>Verleihmaterial</source>
+			</trans-unit>
+			<trans-unit id="tx_t3dkitecom_domain_model_schule.media">
+				<source>Media</source>
+			</trans-unit>
+			<trans-unit id="tx_t3dkitecom_domain_model_schule.team">
+				<source>Team</source>
+			</trans-unit>
+			<trans-unit id="tx_t3dkitecom_domain_model_schule.tel">
+				<source>Tel</source>
+			</trans-unit>
+			<trans-unit id="tx_t3dkitecom_domain_model_schule.email">
+				<source>Email</source>
+			</trans-unit>
+			<trans-unit id="tx_t3dkitecom_domain_model_schule.hauptmarke">
+				<source>Hauptmarke</source>
+			</trans-unit>
+			<trans-unit id="tx_t3dkitecom_domain_model_schule.hauptbild">
+				<source>Hauptbild</source>
+			</trans-unit>
+			<trans-unit id="tx_t3dkitecom_domain_model_schule.webcam">
+				<source>Webcam</source>
+			</trans-unit>
+			<trans-unit id="tx_t3dkitecom_domain_model_schule.stadt">
+				<source>Stadt</source>
+			</trans-unit>
+			<trans-unit id="tx_t3dkitecom_domain_model_schule.land">
+				<source>Land</source>
+			</trans-unit>
+			<trans-unit id="tx_t3dkitecom_domain_model_schule.url">
+				<source>Url</source>
+			</trans-unit>
+			<trans-unit id="tx_t3dkitecom_domain_model_schule.adresse">
+				<source>Adresse</source>
+			</trans-unit>
+			<trans-unit id="tx_t3dkitecom_domain_model_schule.sprachen">
+				<source>Sprachen</source>
+			</trans-unit>
+			<trans-unit id="tx_t3dkitecom_domain_model_schule.zeiten">
+				<source>Zeiten</source>
+			</trans-unit>
+
+			<trans-unit id="tx_t3dkitecom_domain_model_spot">
+				<source>Spot</source>
+			</trans-unit>
+			<trans-unit id="tx_t3dkitecom_domain_model_spot.name">
+				<source>Name</source>
+			</trans-unit>
+			<trans-unit id="tx_t3dkitecom_domain_model_spot.ort">
+				<source>Ort</source>
+			</trans-unit>
+			<trans-unit id="tx_t3dkitecom_domain_model_spot.stadt">
+				<source>Stadt</source>
+			</trans-unit>
+			<trans-unit id="tx_t3dkitecom_domain_model_spot.land">
+				<source>Land</source>
+			</trans-unit>
+			<trans-unit id="tx_t3dkitecom_domain_model_spot.anfaenger">
+				<source>Anfaenger</source>
+			</trans-unit>
+			<trans-unit id="tx_t3dkitecom_domain_model_spot.fortgeschrittene">
+				<source>Fortgeschrittene</source>
+			</trans-unit>
+			<trans-unit id="tx_t3dkitecom_domain_model_spot.profis">
+				<source>Profis</source>
+			</trans-unit>
+			<trans-unit id="tx_t3dkitecom_domain_model_spot.hauptbild">
+				<source>Hauptbild</source>
+			</trans-unit>
+			<trans-unit id="tx_t3dkitecom_domain_model_spot.flachwasser">
+				<source>Flachwasser</source>
+			</trans-unit>
+			<trans-unit id="tx_t3dkitecom_domain_model_spot.rettungsdienst">
+				<source>Rettungsdienst</source>
+			</trans-unit>
+			<trans-unit id="tx_t3dkitecom_domain_model_spot.wellen">
+				<source>Wellen</source>
+			</trans-unit>
+			<trans-unit id="tx_t3dkitecom_domain_model_spot.schule">
+				<source>Schule</source>
+			</trans-unit>
+			<trans-unit id="tx_t3dkitecom_domain_model_spot.parkplatz">
+				<source>Parkplatz</source>
+			</trans-unit>
+			<trans-unit id="tx_t3dkitecom_domain_model_spot.startlandehilfe">
+				<source>Startlandehilfe</source>
+			</trans-unit>
+			<trans-unit id="tx_t3dkitecom_domain_model_spot.grossereinstieg">
+				<source>Grossereinstieg</source>
+			</trans-unit>
+			<trans-unit id="tx_t3dkitecom_domain_model_spot.sandplatz">
+				<source>Sandplatz</source>
+			</trans-unit>
+			<trans-unit id="tx_t3dkitecom_domain_model_spot.wc">
+				<source>Wc</source>
+			</trans-unit>
+			<trans-unit id="tx_t3dkitecom_domain_model_spot.stehrevier">
+				<source>Stehrevier</source>
+			</trans-unit>
+			<trans-unit id="tx_t3dkitecom_domain_model_spot.beschreibung">
+				<source>Beschreibung</source>
+			</trans-unit>
+			<trans-unit id="tx_t3dkitecom_domain_model_spot.regeln">
+				<source>Regeln</source>
+			</trans-unit>
+			<trans-unit id="tx_t3dkitecom_domain_model_spot.lat">
+				<source>Lat</source>
+			</trans-unit>
+			<trans-unit id="tx_t3dkitecom_domain_model_spot.lng">
+				<source>Lng</source>
+			</trans-unit>
+			<trans-unit id="tx_t3dkitecom_domain_model_spot.webcam">
+				<source>Webcam</source>
+			</trans-unit>
+
+			<trans-unit id="tx_t3dkitecom_domain_model_neuereintrag">
+				<source>Neuer Eintrag</source>
+			</trans-unit>
+
+			<trans-unit id="tx_t3dkitecom_domain_model_search">
+				<source>Search</source>
+			</trans-unit>
+
+			<trans-unit id="tx_t3dkitecom_domain_model_media">
+				<source>Media</source>
+			</trans-unit>
+			<trans-unit id="tx_t3dkitecom_domain_model_media.userid">
+				<source>Userid</source>
+			</trans-unit>
+			<trans-unit id="tx_t3dkitecom_domain_model_media.katid">
+				<source>Katid</source>
+			</trans-unit>
+			<trans-unit id="tx_t3dkitecom_domain_model_media.elid">
+				<source>Elid</source>
+			</trans-unit>
+			<trans-unit id="tx_t3dkitecom_domain_model_media.name">
+				<source>Name</source>
+			</trans-unit>
+
+			<trans-unit id="tx_t3dkitecom_domain_model_userinteraction">
+				<source>User Interaction</source>
+			</trans-unit>
+			<trans-unit id="tx_t3dkitecom_domain_model_userinteraction.userid">
+				<source>Userid</source>
+			</trans-unit>
+			<trans-unit id="tx_t3dkitecom_domain_model_userinteraction.elementid">
+				<source>Elementid</source>
+			</trans-unit>
+			<trans-unit id="tx_t3dkitecom_domain_model_userinteraction.kategorieid">
+				<source>Kategorieid</source>
+			</trans-unit>
+			<trans-unit id="tx_t3dkitecom_domain_model_userinteraction.interactionid">
+				<source>Interactionid</source>
+			</trans-unit>
+
+		</body>
+	</file>
+</xliff>

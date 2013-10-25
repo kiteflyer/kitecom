@@ -1,0 +1,30 @@
+plugin.tx_itsrsaajaxloginv2 {
+	view {
+		templateRootPath = {$plugin.tx_itsrsaajaxloginv2.view.templateRootPath}
+		partialRootPath = {$plugin.tx_itsrsaajaxloginv2.view.partialRootPath}
+		layoutRootPath = {$plugin.tx_itsrsaajaxloginv2.view.layoutRootPath}
+	}
+	persistence {
+		storagePid = {$plugin.tx_itsrsaajaxloginv2.persistence.storagePid}
+	}
+}
+
+plugin.tx_itsrsaajaxloginv2._CSS_DEFAULT_STYLE (
+	input.f3-form-error {
+		background-color:#FF9F9F;
+		border: 1px #FF0000 solid;
+	}
+
+	.tx-its-rsaajaxlogin-v2 table {
+		border-collapse:separate;
+		border-spacing:10px;
+	}
+
+	.tx-its-rsaajaxlogin-v2 table th {
+		font-weight:bold;
+	}
+
+	.tx-its-rsaajaxlogin-v2 table td {
+		vertical-align:top;
+	}
+)

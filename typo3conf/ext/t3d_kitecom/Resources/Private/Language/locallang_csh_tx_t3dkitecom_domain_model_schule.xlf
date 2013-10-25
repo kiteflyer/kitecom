@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2013-10-11T09:54:34Z" product-name="t3d_kitecom">
+		<header/>
+		<body>
+
+			<trans-unit id="name.description">
+				<source>Name</source>
+			</trans-unit>
+			<trans-unit id="beschreibung.description">
+				<source>Beschreibung</source>
+			</trans-unit>
+			<trans-unit id="ort.description">
+				<source>Ort</source>
+			</trans-unit>
+			<trans-unit id="lat.description">
+				<source>Längengrad</source>
+			</trans-unit>
+			<trans-unit id="lng.description">
+				<source>Breitengrad</source>
+			</trans-unit>
+			<trans-unit id="rettungsdienst.description">
+				<source>Rettungsdiesnt</source>
+			</trans-unit>
+			<trans-unit id="strandhelfer.description">
+				<source>Strandhelfer</source>
+			</trans-unit>
+			<trans-unit id="prokiter.description">
+				<source>Prokiter als Lehrer</source>
+			</trans-unit>
+			<trans-unit id="kitesafari.description">
+				<source>Kitesafari</source>
+			</trans-unit>
+			<trans-unit id="flachwasser.description">
+				<source>Flachwasser</source>
+			</trans-unit>
+			<trans-unit id="fotoservice.description">
+				<source>Fotoservice</source>
+			</trans-unit>
+			<trans-unit id="lager.description">
+				<source>Lagermöglichkeit</source>
+			</trans-unit>
+			<trans-unit id="materialmiete.description">
+				<source>Materialmiete</source>
+			</trans-unit>
+			<trans-unit id="stehrevier.description">
+				<source>Stehrevier</source>
+			</trans-unit>
+			<trans-unit id="shop.description">
+				<source>Shop</source>
+			</trans-unit>
+			<trans-unit id="schulungsmaterial.description">
+				<source>Schulungsmaterial</source>
+			</trans-unit>
+			<trans-unit id="verleihmaterial.description">
+				<source>Verleihmaterial</source>
+			</trans-unit>
+			<trans-unit id="media.description">
+				<source>Bilder</source>
+			</trans-unit>
+			<trans-unit id="team.description">
+				<source>Team</source>
+			</trans-unit>
+			<trans-unit id="tel.description">
+				<source>Telefon</source>
+			</trans-unit>
+			<trans-unit id="email.description">
+				<source>E-Mail</source>
+			</trans-unit>
+			<trans-unit id="hauptmarke.description">
+				<source>Hauptmarke</source>
+			</trans-unit>
+			<trans-unit id="hauptbild.description">
+				<source>Hauptbild</source>
+			</trans-unit>
+			<trans-unit id="webcam.description">
+				<source>Webcam (URL)</source>
+			</trans-unit>
+			<trans-unit id="stadt.description">
+				<source>Stadt der Kiteschule</source>
+			</trans-unit>
+			<trans-unit id="land.description">
+				<source>Land der Kiteschule</source>
+			</trans-unit>
+			<trans-unit id="url.description">
+				<source>Website</source>
+			</trans-unit>
+			<trans-unit id="adresse.description">
+				<source>Hier finden Sie uns:</source>
+			</trans-unit>
+			<trans-unit id="crfeuser.description">
+				<source>Create from USERID</source>
+			</trans-unit>
+			<trans-unit id="zeiten.description">
+				<source>Zeiten</source>
+			</trans-unit>
+			<trans-unit id="sprachen.description">
+				<source>Unterrichtssprachen</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

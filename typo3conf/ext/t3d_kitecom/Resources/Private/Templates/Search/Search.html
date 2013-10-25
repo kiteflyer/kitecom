@@ -1,0 +1,26 @@
+<f:layout name="Default" />
+
+<f:section name="main">
+	<div class="row-fluid">
+		<div class="span2 help">
+		 <div class="find_help">
+		 	<i class="icon-info-sign"></i> Hilfe 
+		 </div>
+		</div>	
+		<div id="search" class="span8" style="margin-left: 0px;">
+			<f:form action="search" controller="Search" object="{object}" name="name"  >		
+			<div class="input-prepend span4">
+	          <span class="gray"><i class="icon-user"></i> Wer?</span>
+	          <input type="text" placeholder="z.B. Hans Muster" id="who" class="span4">
+	        </div>
+			<div class="input-prepend span4">            
+	          <span class="gray"><i class="icon-globe"></i> Wo?</span>
+	          <input type="text" placeholder="z.B. Schweiz" id="where" class="span4">              
+			</div>       
+			<div class="span2 btn_search">
+				<f:form.submit value=" Anzeigen" class="btn-gray" />		
+			</div>
+			</f:form>			
+		</div>
+	</div>
+</f:section>

@@ -1,0 +1,56 @@
+<T3DataStructure>
+	<sheets>
+		<sDEF>
+			<ROOT>
+				<TCEforms>
+					<sheetTitle>Function</sheetTitle>
+				</TCEforms>
+				<type>array</type>
+				<el>
+					<switchableControllerActions>
+						<TCEforms>
+							<label>Select function</label>
+							<config>
+								<type>select</type>
+								<items>
+									<numIndex index="0">
+										<numIndex index="0">Search Startseite</numIndex>
+										<numIndex index="1">Search->spsearch</numIndex>
+									</numIndex>
+									<numIndex index="1">
+										<numIndex index="0">Search Folgeseite</numIndex>
+										<numIndex index="1">Search->search</numIndex>
+									</numIndex>
+									<numIndex index="2">
+										<numIndex index="0">Search List</numIndex>
+										<numIndex index="1">Search->list</numIndex>
+									</numIndex>
+									<numIndex index="3">
+										<numIndex index="0">Search Detail</numIndex>
+										<numIndex index="1">Search->show</numIndex>
+									</numIndex>
+									<numIndex index="4">
+										<numIndex index="0">Search Preview</numIndex>
+										<numIndex index="1">Search->preview</numIndex>
+									</numIndex>
+									<numIndex index="5">
+										<numIndex index="0">Search Headerdata</numIndex>
+										<numIndex index="1">Search->headerdata</numIndex>
+									</numIndex>
+									<numIndex index="6">
+										<numIndex index="0">Search Getdata</numIndex>
+										<numIndex index="1">Search->getdata</numIndex>
+									</numIndex>
+									<numIndex index="7">
+										<numIndex index="0">Search Latest</numIndex>
+										<numIndex index="1">Search->latest</numIndex>
+									</numIndex>
+								</items>
+							</config>
+						</TCEforms>
+					</switchableControllerActions>
+				</el>
+			</ROOT>
+		</sDEF>
+	</sheets>
+</T3DataStructure>

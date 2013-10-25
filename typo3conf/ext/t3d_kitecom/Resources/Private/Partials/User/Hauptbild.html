@@ -1,0 +1,89 @@
+<!-- CSS to style the file input field as button and adjust the Bootstrap progress bars -->
+<link rel="stylesheet" href="fileadmin/fileupload/css/jquery.fileupload-ui.css">
+<!-- CSS adjustments for browsers with JavaScript disabled -->
+<noscript><link rel="stylesheet" href="fileadmin/fileupload/css/jquery.fileupload-ui-noscript.css"></noscript>
+
+    <form class="fileupload1" action="//kitecom.net/" method="POST" enctype="multipart/form-data" data-upload-template-id="h-template-upload" data-download-template-id="h-template-download">
+        <!-- Redirect browsers with JavaScript disabled to the origin page -->
+        <noscript><input type="hidden" name="redirect" value="http://blueimp.github.io/jQuery-File-Upload/"></noscript>
+        <div role="presentation"><div class="files"></div></div>
+		<div class="row fileupload-buttonbar">
+            <div class="span12">
+                <!-- The fileinput-button span is used to style the file input field as button -->
+                <span class="btn btn-success fileinput-button" style="display:none;">
+                    <i class="icon-plus icon-white"></i>
+                    <span>Hinzufügen</span>
+                    <input type="file" name="files[]" multiple>
+                </span>
+                <!-- The loading indicator is shown during file processing -->
+                <span class="fileupload-loading"></span>
+            </div>
+            <!-- The global progress information -->
+            <div class="span12 fileupload-progress fade">
+                <!-- The global progress bar -->
+                <div class="progress progress-success progress-striped active" role="progressbar" aria-valuemin="0" aria-valuemax="100">
+                    <div class="bar" style="width:0%;"></div>
+                </div>
+                <!-- The extended global progress information -->
+                <div class="progress-extended">&nbsp;</div>
+            </div>
+        </div>        
+    </form>
+
+
+
+<script id="h-template-upload" type="text/x-tmpl">
+{% for (var i=0, file; file=o.files[i]; i++) { %}
+    <tr class="template-upload fade">
+        <td>&nbsp;
+            <span class="preview"></span>
+        </td>
+        <td>
+            <p class="name">{%=file.name%}</p>
+            {% if (file.error) { %}
+                <div><span class="label label-important">Error</span> {%=file.error%}</div>
+            {% } %}
+        </td>
+        <td>
+            {% if (!o.files.error && !i && !o.options.autoUpload) { %}
+                <button class="btn btn-primary start">
+                    <i class="icon-upload icon-white"></i>
+                    <span>Start</span>
+                </button>
+            {% } %}
+            {% if (!i) { %}
+                <button class="btn btn-warning cancel">
+                    <i class="icon-ban-circle icon-white"></i>
+                    <span>Cancel</span>
+                </button>
+            {% } %}
+        </td>
+    </tr>
+{% } %}
+</script>
+<!-- The template to display files available for download -->
+<script id="h-template-download" type="text/x-tmpl">
+{% for (var i=0, file; file=o.files[i]; i++) { %}
+    <div class="template-download fade">
+            <span class="preview">
+                {% if (file.imageview_url) { %}
+                    <a href="{%=file.url%}" title="{%=file.name%}" class="gallery" download="{%=file.name%}"><img class="thumbnail" width="300" src="{%=file.imageview_url%}"></a>
+                {% }else{ %}
+                    <a href="{%=file.url%}" title="{%=file.name%}" class="gallery" download="{%=file.name%}"><img class="thumbnail" width="100" src="{%=file.listview_url%}"></a>
+                {% } %}
+            </span>
+     </div>
+     <div class="template-download fade">
+        <button class="btn btn-danger delete" data-type="{%=file.delete_type%}" data-url="{%=file.delete_url%}&uid={uid}&cat={cat}&user={user}&section={section}"{% if (file.delete_with_credentials) { %} data-xhr-fields='{"withCredentials":true}'{% } %}>
+            <i class="icon-trash icon-white"></i>
+            <span>Löschen</span>
+        </button>
+    </div>
+{% } %}
+</script>
+
+
+
+<!-- The main application script -->
+
+<script src="fileadmin/fileupload/js/main_hauptbild.js"></script>

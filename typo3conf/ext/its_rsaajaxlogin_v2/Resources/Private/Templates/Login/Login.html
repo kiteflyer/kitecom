@@ -1,0 +1,122 @@
+<f:layout name="Default" />
+{namespace special=Tx_ItsRsaajaxloginV2_ViewHelpers}
+This Template is responsible for displaying a single view for a domain object
+
+If you modify this template, do not forget to change the overwrite settings
+in /Configuration/ExtensionBuilder/settings.yaml:
+	Resources:
+		Private:
+			Templates:
+				Show.html: keep
+
+Otherwise your changes will be overwritten the next time you save the extension in the extension builder
+
+<f:section name="main">
+<noscript>
+<span style="color:red"><f:translate key="javascript" /></span><br/>
+<span style="display:none"><a href="http://www.its-hofmann.de">its_ajaxlogin_v2 0.5.0 TYPO3 plugin and Website development by ITS Hofmann Website development</a><br/></span>
+
+</noscript>
+
+<div id="loginbox{contentId}" class="itsloginbox_4">
+<div id="login{contentId}" class="itsloginbox">
+
+				<form id="LoginForm_{contentId}" name="LoginForm" action="index.php" target="_top" method="post">
+				<div id="logininputs{contentId}" class="itsloginbox_1">
+				<input class="rsalogin" name="logintype" value="login" type="hidden"/>
+					<input class="rsalogin" name="user" value="" type="text"/>
+				</div>
+				<div id="logininputs1{contentId}" class="itsloginbox_2">
+					<input class="rsalogin" name="pass" value="" type="password"/>
+				</div>
+				<span class="test12"><input class="rsalogin " name="submit" value="Login" type="submit"/></span>
+				</form>
+</div>
+
+<div id="loginerror{contentId}" class="loginerror"></div>
+<span id="register{contentId}"></span>
+<div id="rememberlink{contentId}"> <special:rememberlink   /></div>
+<div id="welcome{contentId}"></div>
+<div id="status{contentId}"></div>
+
+<div id="logout{contentId}" style="display:none" >
+	<span id="logouttext{contentId}" ></span>
+	<form id="LogoutForm_{contentId}" name="LogoutForm" action="index.php" target="_top" method="post">
+				<input class="rsalogin" name="logintype" value="logout" type="hidden"/>
+			<input class="rsalogin" name="submit" value="Logout" type="submit"/>
+	</form>
+</div>
+
+</div>
+<div id="divhiddenform_{contentId}" class="hidden_form1" >
+				<form method="post" target="_top" action="index.php" name="LoginForm2" id="hiddenform_{contentId}">
+				<input type="hidden" name="pass" value=""/>
+				<input type="hidden" name="user" value=""/>
+				<input type="hidden" name="eID" value="its_rsa_login2"/>
+				<input type="hidden" name="UID" value="{fe_loginpage}"/>
+				<input type="hidden" name="pid" value="{userpid}"/>
+				<input type="hidden" name="n" value="" />
+				<input type="hidden" name="e" value="" />
+				<input type="hidden" name="L" value="{langid}" />
+				<input type="hidden" name="register" value="{register}"/>
+				<input type="hidden" name="rpl" value="" />
+				<input type="hidden" name="rlid" value="{logoutlink}" />
+				<input type="hidden" name="submit" value="Login"/>
+				<input type="hidden" name="logintype" value="login"/>
+				<input type="hidden" name="realurl" value="{realurl}"/>
+				</form>
+</div>
+<script  type="text/javascript">
+<!--
+
+
+var text = new Array(7);
+text[0]='<f:translate key="username" />12';
+text[1]='<f:translate key="welcome" />';
+text[2]='<f:translate key="status" />';
+text[3]='<f:translate key="loginerror" />';
+text[4]='<f:translate key="register" />';
+text[5]='<f:translate key="save" />';
+text[6]='<f:translate key="cancel" />';
+text[7]='<f:translate key="cookiewarning" />';
+var link = '{listLink}';
+var reguid = {register};
+var redirectonlogoutlinkid = {redirectonlogoutlinkid};
+
+
+if(window.addEventListener){
+	window.addEventListener('load', load_login_{contentId}(), false);
+} else {
+	window.attachEvent('onload', load_login_{contentId});
+}
+
+function load_login_{contentId}() {
+	var link = '{listLink}';
+	<f:if condition="{javascript} == 0">
+	alert ('Please select javascript framework prototype or jQuery in the backend.');
+	</f:if>
+
+	<f:if condition="{javascript} == 1">
+	if (typeof Prototype !=  'undefined') {
+		login_object{contentId} = new its_login_proto({contentId},text,reguid,{redirectonlogoutlinkid},'{imagedir}',{langid},{realurl},'{lostlink}' );
+		setTimeout ("login_object{contentId}.init();",100);
+	} else {
+		alert('No prototype found.')
+	}
+	</f:if>
+	<f:if condition="{javascript} == 2">
+	if (typeof jQuery != 'undefined') {
+
+		login_object{contentId} = new its_login_jq({contentId},text,reguid,{redirectonlogoutlinkid},'{imagedir}',{langid},{realurl},'{lostlink}' );
+
+		setTimeout ("login_object{contentId}.init();",100);
+	} else {
+		alert('No jQuery found.')
+	}
+	</f:if>
+}
+
+//-->
+</script>
+
+</f:section>

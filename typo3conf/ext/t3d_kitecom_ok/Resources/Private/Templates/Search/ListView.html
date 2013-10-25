@@ -1,0 +1,136 @@
+<script>
+$('#container').hide();
+$('#map_overview').show();
+$('#map').hide();
+$('#map_full').hide();
+$('#list').show();
+</script>
+<f:for each="{searchresult_user}" as="result">
+	<div class="item_list item user" data-category="user" data-name="{result.username}">
+	  <img height="100" width="100" alt="100x100" src="http://placehold.it/100x100"" style="width: 100px; height: 100px;">
+	  <div class="caption">
+	    <h3>USER {result.username}</h3>
+	    <p>{result.first_name}</p>
+		Distanz: (km) <p class="distance"></p>	    	    
+	    <p><a class="btn btn-primary" href="#">Action</a> <a class="btn" href="#">Action</a></p>
+	  </div>
+	</div>
+</f:for>
+
+
+
+
+
+
+<f:for each="{searchresult_spot}" as="result">
+
+	<div class="item_list item spot 
+	<f:if condition="{result.rettungsdienst}">rettungsdienst</f:if>		
+	<f:if condition="{result.flachwasser}">flachwasser</f:if>
+	<f:if condition="{result.wellen}">wellen</f:if>
+	<f:if condition="{result.schule}">schule</f:if>	
+	<f:if condition="{result.parkplatz}">parkplatz</f:if>
+	<f:if condition="{result.startlandehilfe}">startlandehilfe</f:if>	
+	<f:if condition="{result.grossereinstieg}">grossereinstieg</f:if>	
+	<f:if condition="{result.sandplatz}">sandplatz</f:if>			
+	<f:if condition="{result.wc}">wc</f:if>				
+	<f:if condition="{result.stehrevier}">stehrevier</f:if>					
+	
+	" data-category="spot" data-name="{result.name}" data-uid="{result.uid}" data-lat="{result.lat}" data-rating="{result.likes}" id="spot{result.uid}" data-lng="{result.lng}" id="spot{result.uid}" data-kat="spot">	
+
+		<div class="span3">		
+			<div class="theimage"><div class="batch spot bg_spot">Spot</div>			
+				<f:if condition="{result.hauptbild}">
+				<f:then>
+					<img height="100" width="100" alt="100x100" src="fileadmin/fileupload/server/php/{result.hauptbild}" style="width: 100px; height: 100px;">
+				</f:then>
+				<f:else>
+					<img height="100" width="100" alt="100x100" src="fileadmin/templates/img/platzhalter_schule.jpg" style="width: 100px; height: 100px;">
+				</f:else>
+				</f:if>
+			</div>
+			<div class="userinteractions">
+				<i class="icon-heart"></i> {result.likes}
+				<i class="icon-flag"></i> {result.wasthere}
+				<i class="icon-pushpin"></i> {result.local}							
+				<i class="icon-bookmark"></i> {result.favorite}
+			</div>
+		</div>
+		<div class="span5">
+				<div class="desc">
+				    <h3>{result.name}</h3>
+				    {result.beschreibung}
+				</div>
+					<div class="country">{result.land}, {result.ort}</div>	
+					<div class="distance pull-right"></div>	    	    				
+		</div>
+		<div class="span4">
+				    <div class="attribute">
+						<div class="attribut{result.flachwasser}"><f:if condition="{result.flachwasser}"><f:then><i class="icon-ok-sign" /></f:then><f:else><i class="icon-minus-sign" /></f:else></f:if> Flachwasser</div>
+				    	<div class="attribut{result.rettungsdienst}"><f:if condition="{result.rettungsdienst}"><f:then><i class="icon-ok-sign" /></f:then><f:else><i class="icon-minus-sign" /></f:else></f:if> Rettungsdienst</div>
+				    	<div class="attribut{result.wellen}"><f:if condition="{result.wellen}"><f:then><i class="icon-ok-sign" /></f:then><f:else><i class="icon-minus-sign" /></f:else></f:if> Wellen</div>
+				    	<div class="attribut{result.schule}"><f:if condition="{result.schule}"><f:then><i class="icon-ok-sign" /></f:then><f:else><i class="icon-minus-sign" /></f:else></f:if> Schule</div>
+						<div class="attribut{result.parkplatz}"><f:if condition="{result.parkplatz}"><f:then><i class="icon-ok-sign" /></f:then><f:else><i class="icon-minus-sign" /></f:else></f:if> Parkplatz</div>	    	
+						<div class="attribut{result.startlandehilfe}"><f:if condition="{result.startlandehilfe}"><f:then><i class="icon-ok-sign" /></f:then><f:else><i class="icon-minus-sign" /></f:else></f:if> Start-/Landehilfe</div>
+						<div class="attribut{result.grossereinstieg}"><f:if condition="{result.grossereinstieg}"><f:then><i class="icon-ok-sign" /></f:then><f:else><i class="icon-minus-sign" /></f:else></f:if> Grosser Einstieg</div>	 
+						<div class="attribut{result.sandplatz}"><f:if condition="{result.sandplatz}"><f:then><i class="icon-ok-sign" /></f:then><f:else><i class="icon-minus-sign" /></f:else></f:if> Sandplatz</div>	 			   							
+						<div class="attribut{result.wc}"><f:if condition="{result.wc}"><f:then><i class="icon-ok-sign" /></f:then><f:else><i class="icon-minus-sign" /></f:else></f:if> WC</div>	 			   										
+						<div class="attribut{result.stehrevier}"><f:if condition="{result.stehrevier}"><f:then><i class="icon-ok-sign" /></f:then><f:else><i class="icon-minus-sign" /></f:else></f:if> Stehrevier</div>				
+				    </div>			
+		</div>
+		<div class="hovercontent contenthover_spot"></div>				
+	</div>
+	
+	<script>
+		var mydistance = distance("{result.lat}","{result.lng}");
+		$("#spot{result.uid} .distance").text(mydistance);	
+	</script>
+
+</f:for>
+
+
+
+
+
+
+
+
+
+
+<f:for each="{searchresult_school}" as="result">
+	<div class="item_list item school span5
+		<f:if condition="{result.strandhelfer}">strandhelfer</f:if>
+	<f:if condition="{result.rettungsdienst}">rettungsdienst</f:if>
+	<f:if condition="{result.prokiter}">prokiter</f:if>	
+	<f:if condition="{result.kitesafari}">kitesafari</f:if>		
+	<f:if condition="{result.flachwasser}">flachwasser</f:if>			
+	<f:if condition="{result.fotoservice}">fotoservice</f:if>			
+	<f:if condition="{result.lager}">lager</f:if>			
+	<f:if condition="{result.materialmiete}">materialmiete</f:if>			
+	<f:if condition="{result.stehrevier}">stehrevier</f:if>			
+	<f:if condition="{result.shop}">shop</f:if>			
+	
+	" data-category="school" data-name="{result.name}" data-uid="{result.uid}" id="school{result.uid}" data-rating="{result.likes}" data-lat="{result.lat}" data-lng="{result.lng}" data-kat="schule">
+
+	<f:if condition="{result.hauptbild}">
+	<f:then>
+		<div class="theimage"><img height="100" width="100" alt="100x100" src="fileadmin/fileupload/server/php/{result.hauptbild}" style="width: 100px; height: 100px;"></div>
+	</f:then>
+	<f:else>
+		<div class="theimage"><img height="100" width="100" alt="100x100" src="fileadmin/templates/img/platzhalter_schule.jpg" style="width: 100px; height: 100px;"></div>
+	</f:else>
+	</f:if>
+	
+	
+	
+	  <div class="caption">
+	    <h3>School {result.username}</h3>
+	    <p>{result.name}</p>
+		Distanz: (km) <p class="distance"></p>	    
+	    <p><a class="btn btn-primary" href="#">Action</a> <a class="btn" href="#">Action</a></p>
+	  </div>
+	</div>
+
+</f:for>
+
+

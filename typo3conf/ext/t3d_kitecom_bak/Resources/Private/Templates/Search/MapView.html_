@@ -1,0 +1,155 @@
+<script type="text/javascript" src="typo3conf/ext/t3d_kitecom/Resources/Public/Js/simplemarker.1.4.min.js"></script>
+<script>
+
+
+$('#map_full').show();
+$('#map_overview').hide();
+$('#container').hide();
+
+
+
+
+
+
+
+
+
+
+//map
+
+var fullmap = new google.maps.Map(document.getElementById('map_full'), fullmapOptions);
+
+function makeFullMarker(options){
+	var fulllatLng = new google.maps.LatLng(options.lng,options.lat);
+	/*
+	var fullmarker = new google.maps.Marker({
+        position: fulllatLng,
+        icon: '/fileadmin/templates/img/icon_'+options.kat+'.png',
+        map: fullmap
+        //zIndex: Math.round(latLng.lat()*-100000)<<5
+    });
+    */
+   var fullmarker =  new SimpleMarker(
+   fullmap,
+	  new google.maps.LatLng(options.lng,options.lat),
+	  {
+	  	id:options.id,
+	    image: '/fileadmin/templates/img/icon_'+options.kat+'.png',
+	    //dimension: new google.maps.Size(48,48),
+	    //anchor: new google.maps.Point(24,24),
+	    title: options.title,
+	    classname: options.classes
+	  }
+  );
+    
+    
+    
+    
+	fullbounds.extend(fulllatLng);
+
+    fullmarkersmap.push(fullmarker);
+    
+}	
+
+
+function clearfullOverlays() {
+	for (var i = 0; i < fullmarkersmap.length; i++ ) {
+	    fullmarkersmap[i].setMap(null);
+	}
+	fullmarkersmap = [];
+	fullmarkers = [];	
+}
+
+function fullMap() {
+
+		<f:for each="{searchresult_school}" as="result" iteration="number">
+
+//		$( ".isotope-item" ).not(".isotope-hidden").each(function( index ) {
+			<f:if condition="{result.lat}">	
+				fulllat = {result.lat};
+				fulllng = {result.lng};
+				var id={result.uid};
+				var title = '{result.name}';
+				var kat = 'school';
+					fullmarkers.push({
+						lat:lat,
+						id:kat+id,
+						classes:'asdf, asdfasdf',
+						title:title,
+						lng:lng,
+						kat:kat
+					});		
+			</f:if>		
+			
+		//});			  
+		</f:for>
+		<f:for each="{searchresult_spot}" as="result" iteration="number">
+
+//		$( ".isotope-item" ).not(".isotope-hidden").each(function( index ) {
+			<f:if condition="{result.lat}">	
+				fulllat = {result.lat};
+				fulllng = {result.lng};
+				var id={result.uid};				
+				var title = '{result.name}';
+				var kat = 'spot';
+					fullmarkers.push({
+						lat:fulllat,
+						title:title,
+						lng:fulllng,
+						kat:kat,
+						id:kat+id,
+						classes:'item spot 	<f:if condition="{result.rettungsdienst}">rettungsdienst</f:if>	<f:if condition="{result.flachwasser}">flachwasser</f:if><f:if condition="{result.wellen}">wellen</f:if> <f:if condition="{result.schule}">schule</f:if><f:if condition="{result.parkplatz}">parkplatz</f:if><f:if condition="{result.startlandehilfe}">startlandehilfe</f:if>	<f:if condition="{result.grossereinstieg}">grossereinstieg</f:if> <f:if condition="{result.sandplatz}">sandplatz</f:if> <f:if condition="{result.wc}">wc</f:if> <f:if condition="{result.stehrevier}">stehrevier</f:if>	',						
+					});		
+			</f:if>		
+			
+		//});			  
+		</f:for>				
+	
+		
+		
+
+	$.each(fullmarkers, function(index, m) {
+		
+	    makeFullMarker(fullmarkers[index]);
+
+	});
+	
+	fullmap.fitBounds(fullbounds);	
+	
+}
+
+
+
+
+
+
+
+$(document).ready(function(){
+
+	fullMap();	
+	
+	setTimeout(function(){
+		$( ".accordion-inner label input" ).each(function(){
+			var field=$(this).attr('data-filter');
+			var kat=$(this).attr('data-category');
+			var count = $('#map_full .'+kat+'.'+field).length;		
+			$('#map_full #spot19').addClass('asdfasdfasdfasdfasdf');
+			console.log ($('#spot19').attr('class')); 
+			
+			if($(this).next().hasClass('count')) {	
+				$(this).next().empty();
+				$(this).next().append(count);
+			}
+		});	
+	}, 3000);
+		
+});
+
+
+
+
+
+
+
+</script>	
+

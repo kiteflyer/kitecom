@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2013-06-15T17:32:44Z" product-name="t3d_kitecom">
+		<header/>
+		<body>
+
+			<trans-unit id="ort.description">
+				<source>Ort</source>
+			</trans-unit>
+			<trans-unit id="stadt.description">
+				<source>Stadt</source>
+			</trans-unit>
+			<trans-unit id="land.description">
+				<source>Land</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

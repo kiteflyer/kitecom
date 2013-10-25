@@ -1,0 +1,32 @@
+<div class="span6">
+	<h2 class="small gray">Heute</h2>
+	<br>
+	<f:for each="{wetter}" as="weather" key="number">
+		<f:if condition="{weather.weatherTime}">
+            <div class="weather_now">
+                <span style="float:left;"><img src="{weather.weatherIcon}" /></span>
+                <strong> Temperatur:</strong> {weather.weatherTemp}<br />
+                <strong> Wind Speed:</strong> {weather.windDirection} {weather.windSpeed}<br />
+            </div>
+		</f:if>
+    </f:for>
+</div>
+<div class="span6 pull-right">
+	<h2 class="small gray">Aussichten</h2>
+	<br>
+		<f:for each="{wetter.weather_forecast}" as="forecast" key="number">
+			<f:if condition="{number} > 0">
+				<div class="weather_forecast">
+	                <div class="block block1">
+	                    <span class="icon"><img src="{forecast.weatherIcon}" alt="forecast.weatherIcon"></img></span>
+	                </div>
+	                <div class="block block2">
+	                    <span class="wday">{forecast.weatherDay}</span>
+	                    <span class="date">{forecast.weatherDate}</span>
+	                    <span class="desc">{forecast.tempMax}</span>
+	                    <span class="wind">{forecast.windDirection} {forecast.windSpeed}</span>
+	                </div>
+	            </div> 
+            </f:if>
+	    </f:for>
+</div>

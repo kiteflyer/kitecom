@@ -1,0 +1,108 @@
+<div class="row-fluid">
+	<div class="span4">
+		<h1 class="big shadow"><i class="icon-map-marker green headerbox"></i> {spot.name}</h1>
+	</div>
+</div>
+
+
+<table class="tx-t3d-kitecom" >
+	<tr>
+		<td>
+			<f:translate key="tx_t3dkitecom_domain_model_spot.ort" />
+		</td>
+		<td>
+			{spot.ort}
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<f:translate key="tx_t3dkitecom_domain_model_spot.stadt" />
+		</td>
+		<td>
+			{spot.stadt}
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<f:translate key="tx_t3dkitecom_domain_model_spot.land" />
+		</td>
+		<td>
+			{spot.land}
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<f:translate key="tx_t3dkitecom_domain_model_spot.anfaenger" />
+		</td>
+		<td>
+			{spot.anfaenger}
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<f:translate key="tx_t3dkitecom_domain_model_spot.fortgeschrittene" />
+		</td>
+		<td>
+			{spot.fortgeschrittene}
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<f:translate key="tx_t3dkitecom_domain_model_spot.profis" />
+		</td>
+		<td>
+			{spot.profis}
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<f:translate key="tx_t3dkitecom_domain_model_spot.hauptbild" />
+		</td>
+		<td>
+			{spot.hauptbild}
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<f:translate key="tx_t3dkitecom_domain_model_spot.regeln" />
+		</td>
+		<td>
+			{spot.regeln}
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<f:translate key="tx_t3dkitecom_domain_model_spot.lat" />
+		</td>
+		<td>
+			{spot.lat}
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<f:translate key="tx_t3dkitecom_domain_model_spot.lng" />
+		</td>
+		<td>
+			{spot.lng}
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<f:translate key="tx_t3dkitecom_domain_model_spot.webcam" />
+		</td>
+		<td>
+			{spot.webcam}
+		</td>
+	</tr>
+</table>
+<script>
+
+	//Detailseite
+	$('.detail_nav').scrollspy();
+    $('.detail_nav ul li a').bind('click', function(e) {
+        e.preventDefault();
+        $('html,body').animate({scrollTop: $(this.hash).offset().top});                                                         
+        return false;
+    });	
+	
+</script>

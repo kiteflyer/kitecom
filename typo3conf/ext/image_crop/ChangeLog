@@ -1,0 +1,57 @@
+Version 1.2.1: 2013-02-20  Sigfried Arnold <s.arnold@go-west.at>
+	* Fix: some CGL stuff
+	* Fix: Added dependency for TYPO3 (TER cleanup process)
+	* Fix: reordered devLog calls for efficienc
+	* Add: a few debugging options
+	* Change: set state of extension to "stable"
+
+Version 1.2.0: 2012-10-31  Sigfried Arnold <s.arnold@go-west.at>
+	* Fix: calculation for colum with now takes border and border spacing into account
+	       though the calculation is still inaccurate, the width of the images in multiple colums
+	       can differ up to n-1 pixels - so the colums can be slightly too small
+	* Fix: some CGL stuff and dead code elimination
+	* Change: old simpleImage function and replaced it with TYPO3-API functions
+	          imageWidthFromConf() was replaced by get_defaultColumnWidth()
+	          the Extension is now pretty free from initial code by Daniel Rohr, sorry :(
+
+Version 1.1.0: 2011-10-10  Sigfried Arnold <s.arnold@rebell.at>
+	* Fix: thanks to Brice Notaise for adding a french translation
+	* Fix: some CGL stuff and dead code elimination
+
+Version 1.0.6: 2011-05-24  Sigfried Arnold <s.arnold@rebell.at>
+	* Fix: added EXT: prefix to includeLibs path in ext_typoscript_setup.txt,
+	        extension should work in global installations too (thanks to Clemens Riccabona).
+	* Fix: some CGL stuff
+
+Version 1.0.5: 2011-02-21  Sigfried Arnold <s.arnold@rebell.at>
+	* Add: manual (for real this time)
+	* Fix: Enable/disable checkbox not shown in TYPO3 <= 4.4
+
+Version 1.0.4: 2011-02-19  Sigfried Arnold <s.arnold@rebell.at>
+	* Cleanup: removed some old stuff and fixed some CGL stuff
+	* Add: checkbox for switching the cropping on and off
+	* Fix: icons in BE rearranged
+	* Change: dropped old locallang_db.xml
+	* Add: translation (german)
+	* Add: debug output
+	* Add: manual
+
+Version 1.0.3: 2011-02-11  Sigfried Arnold <s.arnold@rebell.at>
+	* Fix: works now with TYPO3 4.5 too, thanks to Andreas Heller for the hint and initial fix
+	* Fix: ext_emconf.php was not filled properly
+	* Change: Refactoring of ext_tables.php
+
+Version 1.0.2: 2010-09-23  Sigfried Arnold <s.arnold@rebell.at>
+	* Add: Description in ext_emconf.php
+
+Version 1.0.1: 2010-09-23  Sigfried Arnold <s.arnold@rebell.at>
+	* Add: custom icon set
+	
+Version 1.0.0: 2010-09-23  Sigfried Arnold <s.arnold@rebell.at>
+	* Change: Refactoring for image_crop
+
+Version 0.0.1: 2009-08-21  Sigfried Arnold <s.arnold@rebell.at>
+	* Preventing, that alt attribute get added to a elements (not valid)
+
+Version 0.0.0: 2009-03-05  Daniel Rohr <office@alohalab.at>
+	* Initial release

@@ -1,0 +1,57 @@
+<f:layout name="Default" />
+
+This Template is responsible for displaying a single view for a domain object
+
+If you modify this template, do not forget to change the overwrite settings
+in /Configuration/ExtensionBuilder/settings.yaml:
+  Resources:
+    Private:
+      Templates:
+        Show.html: keep
+
+Otherwise your changes will be overwritten the next time you save the extension in the extension builder
+
+<f:section name="main">
+<f:form action="list" pageUid='3' controller="Search" object="{object}" name="name"  >
+<div id="sp_search" class="span6 offset2">
+	<h1 class="header1 shadow">Kitesurfing</h1>
+	<div class="sp_search_wrap">
+		<div class="sp_search_text">
+			Finde dein Traumspot, eine passende Schule uvm. 
+			Alles was du zum Kiten brauchst...			
+		</div>
+		<div class="input-prepend">
+          <span class="orange"><i class="icon-user"></i> Wer?</span>
+          <input type="text" name="who" placeholder="z.B. Tommy Friedel" id="who" class="span4">
+        </div>
+		<div class="input-prepend">            
+          <span class="orange"><i class="icon-globe"></i> Wo?</span>
+          <input type="text" name="where" placeholder="z.B. Mein Standort..." id="where" class="span4">              
+		</div>
+		<div class="sp_icons">
+				<f:render partial="Search/Icons" />
+		</div>
+		<div class="sp_submit">
+			<f:form.submit value="Anzeigen " class="btn-orange" />
+		</div>
+	</div>
+</div>
+</f:form>
+
+<f:flashMessages />
+
+<script>
+		$('.btn-group.category input').removeProp('checked');
+		$('.btn-group.category input').prop('checked', false);
+		$('.btn-group.category label').removeClass('active');
+		
+		//Default Spot
+		$('#check_spot').prop('checked',true);
+		$('#check_spot').next().addClass('active');
+		
+
+</script>
+
+
+</f:section>
+

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<T3locallang>
+	<meta type="array">
+		<type>database</type>
+		<description>Language labels for database tables/fields belonging to extension 'image_crop'</description>
+	</meta>
+	<data type="array">
+		<languageKey index="default" type="array">
+			<label index="tt_content.tx_imagecrop_crop">Cropping</label>
+			<label index="tt_content.tx_imagecrop_gravity">Alignment for cropping</label>
+			<label index="tt_content.tx_imagecrop_gravity_northwest">top left</label>
+			<label index="tt_content.tx_imagecrop_gravity_north"    >top</label>
+			<label index="tt_content.tx_imagecrop_gravity_northeast">top right</label>
+			<label index="tt_content.tx_imagecrop_gravity_west"     >left</label>
+			<label index="tt_content.tx_imagecrop_gravity_center"   >center</label>
+			<label index="tt_content.tx_imagecrop_gravity_east"     >right</label>
+			<label index="tt_content.tx_imagecrop_gravity_southwest">bottom left</label>
+			<label index="tt_content.tx_imagecrop_gravity_south"    >bottom</label>
+			<label index="tt_content.tx_imagecrop_gravity_southeast">bottom right</label>
+		</languageKey>
+		<languageKey index="de" type="array">
+			<label index="tt_content.tx_imagecrop_crop">Zuschnitt</label>
+			<label index="tt_content.tx_imagecrop_gravity">Ausrichtung für Zuschnitt</label>
+			<label index="tt_content.tx_imagecrop_gravity_northwest">oben links</label>
+			<label index="tt_content.tx_imagecrop_gravity_north"    >oben</label>
+			<label index="tt_content.tx_imagecrop_gravity_northeast">oben rechts</label>
+			<label index="tt_content.tx_imagecrop_gravity_west"     >links</label>
+			<label index="tt_content.tx_imagecrop_gravity_center"   >mittig</label>
+			<label index="tt_content.tx_imagecrop_gravity_east"     >rechts</label>
+			<label index="tt_content.tx_imagecrop_gravity_southwest">unten links</label>
+			<label index="tt_content.tx_imagecrop_gravity_south"    >unten</label>
+			<label index="tt_content.tx_imagecrop_gravity_southeast">unten rechts</label>
+		</languageKey>
+		<languageKey index="fr" type="array">
+			<label index="tt_content.tx_imagecrop_crop">Recadrage</label>
+			<label index="tt_content.tx_imagecrop_gravity">Alignement du recadrage</label>
+			<label index="tt_content.tx_imagecrop_gravity_northwest">Supérieur gauche</label>
+			<label index="tt_content.tx_imagecrop_gravity_north"    >Supérieur</label>
+			<label index="tt_content.tx_imagecrop_gravity_northeast">Supérieur droit</label>
+			<label index="tt_content.tx_imagecrop_gravity_west"     >Gauche</label>
+			<label index="tt_content.tx_imagecrop_gravity_center"   >Centre</label>
+			<label index="tt_content.tx_imagecrop_gravity_east"     >Droite</label>
+			<label index="tt_content.tx_imagecrop_gravity_southwest">Inférieur gauche</label>
+			<label index="tt_content.tx_imagecrop_gravity_south"    >Inférieur</label>
+			<label index="tt_content.tx_imagecrop_gravity_southeast">Inférieur droit</label>
+		</languageKey>
+	</data>
+</T3locallang>

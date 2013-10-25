@@ -1,0 +1,14 @@
+plugin.tx_itsrsaajaxloginv2 {
+	view {
+		# cat=plugin.tx_itsrsaajaxloginv2/file; type=string; label=Path to template root (FE)
+		templateRootPath = EXT:its_rsaajaxlogin_v2/Resources/Private/Templates/
+		# cat=plugin.tx_itsrsaajaxloginv2/file; type=string; label=Path to template partials (FE)
+		partialRootPath = EXT:its_rsaajaxlogin_v2/Resources/Private/Partials/
+		# cat=plugin.tx_itsrsaajaxloginv2/file; type=string; label=Path to template layouts (FE)
+		layoutRootPath = EXT:its_rsaajaxlogin_v2/Resources/Private/Layouts/
+	}
+	persistence {
+		# cat=plugin.tx_itsrsaajaxloginv2//a; type=int+; label=Default storage PID
+		storagePid = 
+	}
+}

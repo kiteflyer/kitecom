@@ -1,0 +1,30 @@
+<div class="row-fluid headerdata">
+	<div class="headericons">
+		<div class="wrap_icons">
+			    <h4 class="header">Kategorien <a title="" class="mytooltips" data-placement="right" data-toggle="tooltip" href="#" data-original-title="Wähle hier deine Kategorien aus."><i class="icon-info-sign"></i></a></h4>
+			<f:render partial="Search/Icons" />
+		</div>
+	</div>
+	<div class="header_list" style="margin-left:0px;">
+		<div class="auflistung pull-left">
+			<h4 class="header">Auflistung <a title="" class="mytooltips" data-placement="right" data-toggle="tooltip" href="#" data-original-title="Wähle die gewünschte Darstellung."><i class="icon-info-sign"></i></a></h4>
+			<f:render partial="Search/Auflistung" />
+		</div>
+		<div class="sortierung pull-left">
+			<h4 class="header">Sortierung <a title="" class="mytooltips" data-placement="right" data-toggle="tooltip" href="#" data-original-title="Sortiere die Ausgabe."><i class="icon-info-sign"></i></a></h4> 
+			<f:render partial="Search/Sortierung" />	
+		</div>
+		<div class="myentrys pull-left">
+			<h4 class="header">Anzeigen <a title="" class="mytooltips" data-placement="right" data-toggle="tooltip" href="#" data-original-title="Alle Inhalte oder nur meine erfssten Inhalte anzeigen."><i class="icon-info-sign"></i></a></h4> 
+			<f:render partial="Search/Meinedaten" />	
+		</div>		
+	</div>
+</div>
+<div class="row-fluid hideForDetail">
+	<div class="span12 filter">
+		<div style="float:left;margin-right: 5px;">Filter:</div>
+		<div id="mysearchfilters"></div>
+		<div id="myfilters" style="float:left;"></div> 
+		<a class="clearAll" href="#"><i class="icon-trash"></i> Alle löschen</a>
+	</div>
+</div>

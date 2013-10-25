@@ -1,0 +1,143 @@
+
+	<div id="standort" class="contentbox shadow">
+		<h2 class="small shadow gray">Standort</h2>
+
+		<label>Standort des Spots <span class="required">*</span></label>
+		<f:render partial="Spot/MyMap"/>
+		<f:form.hidden property="lat" id="lat" />
+		<f:form.hidden property="lng" id="lng" />		
+		<br />
+			<!--<label for="ort"><f:translate key="tx_t3dkitecom_domain_model_spot.ort" /> <span class="required">*</span></label>-->
+			<f:form.hidden property="ort" id="place" />
+			<!--<label for="stadt"><f:translate key="tx_t3dkitecom_domain_model_spot.stadt"  /> <span class="required">*</span></label>-->
+			<f:form.hidden property="stadt" id="city" />
+			<!--<label for="land"><f:translate key="tx_t3dkitecom_domain_model_spot.land" /> <span class="required">*</span></label>-->
+			<f:form.hidden property="land" id="country" />
+
+
+		<!--<label for="hauptbild">
+			<f:translate key="tx_t3dkitecom_domain_model_spot.hauptbild" />
+		</label>
+			<f:form.textfield property="hauptbild" />		
+		-->
+
+		<div class="contentbox_border"></div>
+	</div>
+		
+	
+	<div id="infos" class="contentbox shadow">
+		<h2 class="small shadow gray">Infos</h2>
+	
+		<label for="name">
+			<f:translate key="tx_t3dkitecom_domain_model_spot.name" /> <span class="required">*</span>
+		</label>
+			<f:form.textfield property="name" id="name"  />
+		<label for="beschreibung">
+			<f:translate key="tx_t3dkitecom_domain_model_spot.beschreibung" /> <span class="required">*</span>
+		</label>	
+			<f:form.textarea property="beschreibung" cols="20" rows="5" />		
+		<label for="regeln">
+			<f:translate key="tx_t3dkitecom_domain_model_spot.regeln" />			
+		</label>
+			<f:form.textarea property="regeln" cols="20" rows="5" />		
+		<div class="row span12 stufe">
+			<div class="span6">
+				<label for="koennerstufe">
+					<f:translate key="tx_t3dkitecom_domain_model_spot.koennerstufe" />Könnerstufe
+				</label>
+			</div>
+			<div class="control-group">
+			    <div class="controls span6">
+					<label for="anfaenger"><f:form.checkbox property="anfaenger" value="1" /> <f:translate key="tx_t3dkitecom_domain_model_spot.anfaenger" /></label>
+					<label for="fortgeschrittene"><f:form.checkbox property="fortgeschrittene" value="1" /> <f:translate key="tx_t3dkitecom_domain_model_spot.fortgeschrittene" /></label>
+					<label for="profis"><f:form.checkbox property="profis" value="1" /> <f:translate key="tx_t3dkitecom_domain_model_spot.profis" /></label>				
+				</div>
+			</div>
+
+		</div>
+
+		<div class="contentbox_border"></div>	
+	</div>
+	
+
+	<div id="details" class="contentbox shadow">
+		<h2 class="small shadow gray">Details</h2>
+
+
+			<f:comment>
+		<div class="span6">
+			<label for="webcam">
+				<f:translate key="tx_t3dkitecom_domain_model_schule.webcam" />
+			</label>
+				<f:form.textfield property="webcam" placeholder="http://www.yourdomain.com/webcam/..." />
+
+		</div>
+		</f:comment>
+		<div class="span12">
+			<div class="control-group">
+			    <div class="controls span6">
+					<label for="flachwasser">
+						<f:form.checkbox property="flachwasser" value="1" /> <f:translate key="tx_t3dkitecom_domain_model_spot.flachwasser" />
+					</label>
+					<label for="rettungsdienst">
+						<f:form.checkbox property="rettungsdienst" value="1" /> <f:translate key="tx_t3dkitecom_domain_model_spot.rettungsdienst" />
+					</label>
+					<label for="wellen">
+						<f:form.checkbox property="wellen" value="1" /> <f:translate key="tx_t3dkitecom_domain_model_spot.wellen" />
+					</label>
+					<label for="schule">
+						<f:form.checkbox property="schule" value="1" /> <f:translate key="tx_t3dkitecom_domain_model_spot.schule" />
+					</label>
+					<label for="parkplatz">
+						<f:form.checkbox property="parkplatz" value="1" /> <f:translate key="tx_t3dkitecom_domain_model_spot.parkplatz" />
+					</label>										
+			    </div>
+			    <div class="controls span6">
+					<label for="startlandehilfe">
+						<f:form.checkbox property="startlandehilfe" value="1" /> <f:translate key="tx_t3dkitecom_domain_model_spot.startlandehilfe" />
+					</label>				    
+					<label for="grossereinstieg">
+						<f:form.checkbox property="grossereinstieg" value="1" /> <f:translate key="tx_t3dkitecom_domain_model_spot.grossereinstieg" />
+					</label>
+					<label for="sandplatz">
+						<f:form.checkbox property="sandplatz" value="1" /> <f:translate key="tx_t3dkitecom_domain_model_spot.sandplatz" />
+					</label>
+					<label for="wc">
+						<f:form.checkbox property="wc" value="1" /> <f:translate key="tx_t3dkitecom_domain_model_spot.wc" />
+					</label>
+					<label for="stehrevier">
+						<f:form.checkbox property="stehrevier" value="1" /> <f:translate key="tx_t3dkitecom_domain_model_spot.stehrevier" />
+					</label>																	
+			
+			    </div>
+			</div>
+			
+			<hr class="verlauf_green" />
+			<div class="info_images">
+				<i class="icon-info-sign"></i> <b>Bilder</b> können nach dem Speichervorgang hinzugefügt werden...
+			</div>
+
+			<div class="submit_btn">
+				<f:form.submit value=" Speichern" class="btn-orange form-new" />
+			</div>			
+		<div class="contentbox_border"></div>
+	</div>
+	
+
+
+
+
+
+
+
+<!--
+
+<label for="media">
+	<f:translate key="tx_t3dkitecom_domain_model_schule.media" />
+</label>
+	<f:form.textfield property="media" />
+<label for="team">
+	<f:translate key="tx_t3dkitecom_domain_model_schule.team" />
+</label>
+	<f:form.textfield property="team" />
+-->

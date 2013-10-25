@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2013-07-30T16:12:57Z" product-name="t3d_kitecom">
+		<header/>
+		<body>
+
+			<trans-unit id="userid.description">
+				<source>User UID (Feuser)</source>
+			</trans-unit>
+			<trans-unit id="elementid.description">
+				<source>Element UID (Spotid / Schoolid ...)</source>
+			</trans-unit>
+			<trans-unit id="kategorieid.description">
+				<source>Kategorie UID (User / School / Spot...)</source>
+			</trans-unit>
+			<trans-unit id="interactionid.description">
+				<source>(Like, Dislike, Favorite, Student, Washere...)</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

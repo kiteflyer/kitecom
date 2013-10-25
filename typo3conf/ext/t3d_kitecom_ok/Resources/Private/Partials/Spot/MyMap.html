@@ -1,0 +1,292 @@
+<script>	
+
+var latlng;	
+var lat;
+var lng;	
+var map;	
+var myMarker;
+				
+function initialize() {
+
+		
+  	var mapOptions = {
+	    zoom: 12,
+	    center: new google.maps.LatLng(-34.397, 150.644),
+	    mapTypeId: google.maps.MapTypeId.ROADMAP
+    }
+
+  	map = new google.maps.Map(document.getElementById("map_canvas"), mapOptions);
+  	
+  	addressField = document.getElementById("search_address");
+  	
+  	navigator.geolocation.getCurrentPosition(successCallback,errorCallback,{maximumAge:200000});
+}
+
+function successCallback(position) {
+	  lat = position.coords.latitude;
+	  lng = position.coords.longitude;
+	  latlng = new google.maps.LatLng(lat,lng); 
+	  
+
+	  showMap(latlng); 			            	
+}
+
+function errorCallback(error) {
+// Update a div element with error.message.
+
+
+	
+	//myPlace = '46.68816409999999, 7.674323299999969';
+	lat = '46.68816409999999';
+	lng = '7.674323299999969';														
+	var position = new google.maps.LatLng(lat, lng);
+	map.setZoom(4);  // Why 17? Because it looks good.	
+	showMap(position);
+	
+	
+			
+}						
+
+function showMap(latlng){
+
+  	var autocomplete = new google.maps.places.Autocomplete(addressField);
+  	autocomplete.bindTo('bounds', map);
+  	
+  	
+	geocoder = new google.maps.Geocoder();
+
+	
+
+	if ($('#lat').val().length != '0' && $('#lng').val().length != '0') {
+		 lat = $('#lat').val();
+		 lng = $('#lng').val();													
+		 position = new google.maps.LatLng(lat,lng);		 
+	}else{	
+		 position = latlng;
+	}
+	
+
+  	  	
+	myMarker = new google.maps.Marker({
+    	position: position,
+    	draggable: true
+    });
+    
+    myMarker.setIcon(/** @type {google.maps.Icon} */({
+	      url: '/fileadmin/templates/img/icon_spot.png',
+	      size: new google.maps.Size(32, 37),
+	      origin: new google.maps.Point(0, 0),
+	      anchor: new google.maps.Point(17, 34),
+	      scaledSize: new google.maps.Size(32, 37)
+    }));
+	
+	geocoder.geocode({'latLng': myMarker.getPosition()}, function(results, status) {
+		    if (status == google.maps.GeocoderStatus.OK) {
+
+		      if (results[0]) {
+
+				  updateFields(results[0]);				        
+		    }
+		   }
+	});			
+	
+	
+    google.maps.event.addListener(myMarker, "dragend", function(evt){
+		  geocoder.geocode({'latLng': myMarker.getPosition()}, function(results, status) {
+		    if (status == google.maps.GeocoderStatus.OK) {
+
+		      if (results[0]) {
+
+				  updateFields(results[0]);				        
+		    }
+		   }
+		  });							
+
+	});
+	
+	google.maps.event.addListener(myMarker, "dragstart", function(evt){
+	    document.getElementById("lat").value = "";
+	    document.getElementById("lng").value = "";						    
+	});
+	
+	google.maps.event.addListener(map, "click", function(evt){
+        myMarker.setPosition(evt.latLng);
+		  geocoder.geocode({'latLng': myMarker.getPosition()}, function(results, status) {
+		    if (status == google.maps.GeocoderStatus.OK) {
+		      if (results[0]) {
+				  updateFields(results[0]);				        
+		    }
+		   }
+		  });
+	});
+	
+	
+							
+	google.maps.event.addListener(autocomplete, 'place_changed', function() {
+	    myMarker.setVisible(false);
+
+	    var place = autocomplete.getPlace();
+	    if (!place.geometry) {
+	      // Inform the user that the place was not found and return.
+	      input.className = 'notfound';
+	      return;
+	    }
+	
+	    // If the place has a geometry, then present it on a map.
+	    if (place.geometry.viewport) {
+	      map.fitBounds(place.geometry.viewport);
+	    } else {
+	      map.setCenter(place.geometry.location);
+	      map.setZoom(17);  // Why 17? Because it looks good.
+	    }
+	    myMarker.setIcon(/** @type {google.maps.Icon} */({
+	      url: '/fileadmin/templates/img/icon_school.png',
+	      size: new google.maps.Size(32, 37),
+	      origin: new google.maps.Point(0, 0),
+	      anchor: new google.maps.Point(17, 34),
+	      scaledSize: new google.maps.Size(32, 37)
+	    }));
+	    myMarker.setPosition(place.geometry.location);
+	    myMarker.setVisible(true);
+	
+	    var address = '';
+	    if (place.address_components) {
+	      address = [
+	        (place.address_components[0] && place.address_components[0].short_name || ''),
+	        (place.address_components[1] && place.address_components[1].short_name || ''),
+	        (place.address_components[2] && place.address_components[2].short_name || '')
+	      ].join(' ');
+	    }
+
+		updateFields(place);
+
+	  });
+	
+	
+
+	
+	map.setCenter(myMarker.position);
+	myMarker.setMap(map);						
+	
+}
+
+
+
+function updateFields(address) {
+
+	for (var i = 0; i < address.address_components.length; i++) {
+        var addr = address.address_components[i];
+        if (addr.types[0] == 'country') land = addr.short_name;
+        if (addr.types[0] == 'locality') ort = addr.short_name;							              
+        if (addr.types[0] == 'administrative_area_level_1') stadt = addr.short_name;							              			
+    }
+
+	var geoLoc = address.geometry.location;
+	var lat = geoLoc.lat();
+	var lng = geoLoc.lng();
+															
+    
+    
+    
+
+	document.getElementById("lat").value = lat;
+	document.getElementById("lng").value = lng;
+	document.getElementById("place").value = ort;
+	document.getElementById("city").value = stadt;					                
+	document.getElementById("country").value = land;															
+
+	//$("#country").prop('disabled', true);
+    //$('input#ort').val('x')
+
+	map.setCenter(myMarker.position);						
+}
+		
+function loadScript() {
+  var script = document.createElement("script");
+  script.type = "text/javascript";
+  script.src = "http://maps.googleapis.com/maps/api/js?sensor=false&callback=initialize&libraries=places";
+  document.body.appendChild(script);
+}
+
+/*
+function searchAddress() {
+
+    geocoder.geocode(
+        {"address": addressField.value}, 
+        function(results, status) { 
+            if (status == google.maps.GeocoderStatus.OK) { 
+            	
+				updateFields(results[0]);
+            					                				                
+                myMarker.setPosition(loc);
+                map.setCenter(myMarker.position);
+                
+            } 
+            // else { alert("Not found: " + status); } 
+        }
+    );
+}
+*/
+
+function dump(obj) {
+    var out = '';
+    for (var i in obj) {
+        out += i + ": " + obj[i] + "\n";
+    }
+
+    console.log(out);
+
+    // or, if you wanted to avoid alerts...
+
+    var pre = document.createElement('pre');
+    pre.innerHTML = out;
+    document.body.appendChild(pre)
+}		
+					
+$(document).ready(function() {
+	window.onload = loadScript;
+
+	
+	 $(".form-new").click(function(){
+		 //$("#country").removeAttr("disabled");
+		 $("#place").removeAttr("disabled");
+		 //$("#city").removeAttr("disabled");								 								 
+		 
+		 if ($('#lat').val() == '46.6859237' && $('#lng').val() == '7.678161300000056' || $('#lat').val().length == '0') {
+			 
+			 $('#search_address').addClass('f3-form-error');
+			 return false;	 
+		 }else{
+			 $('#search_address').removeClass('f3-form-error');
+		 }
+		 
+	 });
+	 
+	 
+	 
+});					
+					
+</script>
+
+     
+    <!-- Modal -->
+    <div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+    <h3 id="myModalLabel">Modal header</h3>
+    </div>
+    <div class="modal-body">
+    <p>One fine body…</p>
+    </div>
+    <div class="modal-footer">
+    <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+    <button class="btn btn-primary">Save changes</button>
+    </div>
+    </div>
+
+<input type="text" id="search_address" name="search_address" value=""/>
+<!--<br><a onclick="searchAddress();">Deinen Ort suchen</a>-->
+<div class="row-fluid">
+<div id="map_canvas" class="span11">Karte wird geladen...</div>
+
+</div>

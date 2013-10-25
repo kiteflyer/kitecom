@@ -1,0 +1,89 @@
+<div class="row-fluid step1">
+	<div id="standort" class="contentbox  shadow">
+		<h2 class="small shadow gray">Standort</h2>
+
+		<label>Mein Standort <span class="required">*</span></label>
+		<f:render partial="User/MyMap"/>
+		<f:form.hidden property="lat" id="lat" />
+		<f:form.hidden property="lng" id="lng" />
+		<br />
+			
+
+			<label for="suche"><f:translate key="tx_t3dkitecom_domain_model_user.suche" /></label>
+			<f:form.checkbox property="suche" id="suche" value="1" />			
+
+			<f:form.hidden property="ort" id="place" />
+			<!--<label for="stadt"><f:translate key="tx_t3dkitecom_domain_model_user.stadt"  /> <span class="required">*</span></label>-->
+			<f:form.hidden property="stadt" id="city" />
+			<!--<label for="land"><f:translate key="tx_t3dkitecom_domain_model_user.land" /> <span class="required">*</span></label>-->
+			<f:form.hidden property="land" id="country" />
+
+		<div class="contentbox_border"></div>
+	</div>
+		
+	
+	<div id="infos" class="contentbox  shadow">
+		<h2 class="small shadow gray">Infos</h2>
+	
+		<label for="username"><f:translate key="tx_t3dkitecom_domain_model_user.username" /> <span class="required">*</span></label>
+		<f:form.textfield property="username" id="username"  />
+
+		<label for="name"><f:translate key="tx_t3dkitecom_domain_model_user.name" /> <span class="required">*</span></label>
+		<f:form.textfield property="lastName" id="name"  />
+
+		<label for="vorname"><f:translate key="tx_t3dkitecom_domain_model_user.vorname" /></label>
+		<f:form.textfield property="firstName" id="vorname" />
+		
+		<label for="email"><f:translate key="tx_t3dkitecom_domain_model_user.email" /></label>
+		<f:form.textfield property="email" />
+
+		<f:comment>
+		<label for="password"><f:translate key="tx_t3dkitecom_domain_model_user.password" /></label>
+		<f:form.password name="password" property="password" />
+		</f:comment>
+		
+
+		
+		<label for="geburtsdatum"><f:translate key="tx_t3dkitecom_domain_model_user.geburtsdatum" /></label>
+		<f:form.textfield property="geburtsdatum" id="geburtsdatum" class="datepicker" />		
+
+		<div class="contentbox_border"></div>	
+	</div>
+
+	<div id="details" class="contentbox edit shadow">
+		<h2 class="small shadow gray">Details</h2>
+		<div class="row-fluid">
+			<div class="span12">
+				<label for="lieblingsmakre"><f:translate key="tx_t3dkitecom_domain_model_user.lieblingsmakre" /></label>
+				<f:form.textfield property="lieblingsmakre" />
+				
+				<label for="lieblinkskite"><f:translate key="tx_t3dkitecom_domain_model_user.lieblinkskite" /></label>
+				<f:form.textfield property="lieblinkskite" />
+				
+				<label for="lieblingsspot"><f:translate key="tx_t3dkitecom_domain_model_user.lieblingsspot" /></label>
+				<f:form.textfield property="lieblingsspot" />
+				
+				<label for="hausspot"><f:translate key="tx_t3dkitecom_domain_model_user.hausspot" /></label>
+				<f:form.textfield property="hausspot" />								
+
+				<label for="schlafmoeglichkeit"><f:translate key="tx_t3dkitecom_domain_model_user.schlafmoeglichkeit" /></label>
+				<f:form.checkbox property="schlafmoeglichkeit" id="schlafmoeglichkeit" value="1" />
+
+				<label for="jobsearch"><f:translate key="tx_t3dkitecom_domain_model_user.jobsearch" /></label>
+				<f:form.checkbox property="jobsearch" id="jobsearch" value="1" />				
+				
+			</div>
+		</div>
+		<div class="contentbox_border"></div>			
+	</div>
+<!--</div>-->
+
+
+<script>
+    $('.datepicker').datepicker();
+</script>
+<style>
+	#standort.contentbox {
+		height: auto;
+	}
+</style>

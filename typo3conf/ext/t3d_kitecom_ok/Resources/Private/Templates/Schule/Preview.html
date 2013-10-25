@@ -1,0 +1,127 @@
+<f:layout name="Default" />
+<f:section name="main">
+<h1 class="big shadow"><i class="icon-bullhorn pink headerbox"></i> {result.name}</h1>
+<div class="pull-right userinteraction">
+		<i class="icon-heart"></i> {result.likes}
+		<i class="icon-flag"></i> {result.wasthere}
+		<i class="icon-group"></i> {result.student}							
+		<i class="icon-bookmark"></i> {result.favorite}
+</div>
+<div class="clearfix"></div>
+<div class="row-fluid">
+	<div class="span12">
+			<div class="cycle-slideshow">
+				<div class="progress pink"></div>							
+				<div class="cycle-caption"></div>
+			<f:for each="{result.images}" as="image">
+				<f:image src="fileadmin/fileupload/server/php/{image.userid}/{image.katid}/{image.elid}/gallery/{image.name}" width="580c" height="200c" alt="{image.name}" />		
+			</f:for>
+			</div>
+	</div>				
+</div>
+
+
+
+
+<ul class="nav nav-tabs" id="myTab">
+	<li class="active"><h2 class="small gray"><a href="#infodaten" data-toggle="tab">Infodaten</a></h2></li>
+	<li><h2 class="small gray"><a href="#wetter" data-toggle="tab">Wetter</a></h2></li>
+</ul>
+
+
+<div class="bg_preview">
+	<div class="row-fluid">
+	
+	<div class="span12">
+	<div class="tab-content">
+		<!--Tab1-->
+		<div class="tab-pane active" id="infodaten">
+			<div class="span8">
+				<b><f:translate key="tx_t3dkitecom_domain_model_schule.beschreibung" /></b>
+				{result.beschreibung}
+				<br><br>
+				<b><f:translate key="tx_t3dkitecom_domain_model_schule.adresse" /></b>
+				<br>
+				{result.adresse}
+				<br><br>
+				<b><f:translate key="tx_t3dkitecom_domain_model_schule.url" /></b>
+				<br>			
+				<i class="icon-globe"></i> {result.url}
+				<br><br>		
+				<b><f:translate key="tx_t3dkitecom_domain_model_schule.email" /></b>
+				<br>
+				<i class="icon-envelope-alt"></i> {result.email}
+				<br><br>			
+				<b><f:translate key="tx_t3dkitecom_domain_model_schule.tel" /></b>
+				<br>			
+				<i class="icon-phone"></i> {result.tel}
+			</div>			
+			<div class="span4 pull-right">
+				<f:image src="fileadmin/fileupload/server/php/{result.hauptbild}" width="100c" height="100c" alt="{result.name}" class="thumbnail" />
+			    <!--<p><a href="#" class="iLike btn-orange" data-uid="{result.uid}" data-show="schule"><i class="icon-heart"></i> Like</a></p>	
+			    <p><a href="#" class="myVisitedPlace btn-orange" data-uid="{result.uid}" data-show="schule"><i class="icon-flag"></i> Ich war hier</a></p>
+				<p><a href="#" class="myStudy btn-orange" data-uid="{result.uid}" data-show="schule"><i class="icon-group"></i> Ich war Schüler</a></p>	    	
+			    <p><a href="#" class="myFavorit btn-orange" data-uid="{result.uid}" data-show="schule"><i class="icon-bookmark"></i> Mein Favorit</a></p>-->
+			</div>
+		</div>
+		<!--Tab2-->
+		<div class="tab-pane" id="wetter">wetter</div>
+	
+</div>	
+	
+	<div class="row-fluid">
+	<div class="span12" style="position: absolute; bottom: 20px;">
+	<div class="pull-left">
+		<button type="button" class="btn-gray" data-dismiss="modal" aria-hidden="true"><i class="icon-eye-close"></i> Close</button>
+	</div>
+	<div class="pull-right" style="margin-right: 30px;">
+		<a href="#" class="goDetail btn-gray" data-dismiss="modal" aria-hidden="true" data-uid="{result.uid}" data-show="schule"><i class="icon-search"></i> Detail</a>			
+	</div>
+	</div>
+	</div>
+
+	<div class="contentbox_border"></div>					    				
+	</div>
+</div>
+
+<script>
+    $('#myTab a').click(function (e) {
+	    e.preventDefault();
+	    $(this).tab('show');
+    })
+
+
+	if ($('.cycle-slideshow').length > 0) {
+		$('.cycle-slideshow').cycle({
+		    speed: 2000,
+		    manualSpeed: 800,
+		    timeout: 3000,
+		    fx:'fade',
+		    centerHorz:true,
+			pager:'.cycle-pager',
+			pauseOnHover:false
+		    
+		});	
+	}	
+
+var progress = $('.progress'),
+    slideshow = $( '.cycle-slideshow' );
+
+slideshow.on( 'cycle-initialized cycle-before', function( e, opts ) {
+    progress.stop(true).css( 'width', 0 );
+});
+
+slideshow.on( 'cycle-initialized cycle-after', function( e, opts ) {
+    if ( ! slideshow.is('.cycle-paused') )
+        progress.animate({ width: '100%' }, opts.timeout, 'linear' );
+});
+
+slideshow.on( 'cycle-paused', function( e, opts ) {
+   progress.stop(); 
+});
+
+slideshow.on( 'cycle-resumed', function( e, opts, timeoutRemaining ) {
+    progress.animate({ width: '100%' }, timeoutRemaining, 'linear' );
+});
+</script>
+</f:section>

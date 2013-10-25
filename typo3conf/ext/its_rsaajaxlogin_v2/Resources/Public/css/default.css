@@ -1,0 +1,78 @@
+@CHARSET "UTF-8";
+.tx-its-rsaajaxlogin-v2 {
+    height:100px;
+    width:175px;
+}
+
+.itsloginbox_1 {
+  
+    width:175px;
+   /* height:2.0em;*/
+}
+span.loginpic1 {
+    height:20px;
+    width:20px;
+    position :relative;
+    vertical-align:middle;
+    
+  /*  top:0.5em;*/
+}
+
+.itsloginbox_2 {
+    float:left;
+    width:175px;    
+    
+}
+
+.rsalogin{
+    margin-bottom:5px;
+}
+.class_ajax_wait {
+background: url('../Images/spinner.gif') no-repeat center top;
+}
+.loginlink {
+    float:right;
+    padding-top:1px;
+}
+.rsalogin1 {
+    float:left;
+}
+#loginpic1 {
+    height:1px;
+}
+.tx-its-rsaajaxlogin-v2 input {
+    width:135px;
+    vertical-align:middle;
+}
+.loginlink img {
+    border-style:none;
+}
+.loginsubmit {display:none;}
+.itsloginbox_1 {
+    height:30px;
+    width:280px;
+    
+    display:block;
+}
+
+.itsloginbox_3 {
+display:none;
+}
+.itsloginbox_4 {
+height:100px;
+width:175px;
+}
+.loginerror {
+	color:red;
+	width:180px;
+	
+}
+.hidden_form {
+	display:none;
+}
+.test12 {
+	overflow:hidden;
+	display:block;
+	width:0px;
+	height:0px;
+}

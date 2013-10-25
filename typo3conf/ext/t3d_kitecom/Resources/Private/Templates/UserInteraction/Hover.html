@@ -1,0 +1,173 @@
+<f:layout name="Default" />
+
+<f:section name="main">
+
+<f:comment><f:security.ifAuthenticated><f:then>eingeloggter N</f:then><f:else>nicht eingeloggter N</f:else></f:security.ifAuthenticated></f:comment>
+
+
+		
+<f:if condition="{result_spot}">
+
+<f:security.ifAuthenticated><f:then>
+
+	<f:if condition="{result_spot.likes} < 1">
+		<f:then>
+<p><a href="#" class="iLike btn" data-state="1" data-uid="{result_spot.uid}" data-show="{result_spot.kat}"><i class="icon-heart"></i> Like</a></p>			
+		</f:then>
+		<f:else>
+			<p><a href="#" class="iLike btn" data-state="0" data-uid="{result_spot.uid}" data-show="{result_spot.kat}"><i class="icon-heart"></i> Like <i class="icon-minus-sign"></i></a></p>		
+		</f:else>
+	</f:if>
+	<f:if condition="{result_spot.wasthere} < 1">
+		<f:then>
+				<p><a href="#" class="myVisitedPlace btn" data-state="1" data-uid="{result_spot.uid}" data-show="{result_spot.kat}"><i class="icon-flag"></i> Ich war hier</a></p>
+		</f:then>
+		<f:else>
+			<p><a href="#" class="myVisitedPlace btn" data-state="0" data-uid="{result_spot.uid}" data-show="{result_spot.kat}"><i class="icon-flag"></i> Ich war hier <i class="icon-minus-sign"></i></a></p>
+		</f:else>
+	</f:if>	
+	<f:if condition="{result_spot.local} < 1">
+		<f:then>
+			<p><a href="#" class="local btn" data-state="1" data-uid="{result_spot.uid}" data-show="{result_spot.kat}"><i class="icon-pushpin"></i> Ich bin Local</a></p>
+		</f:then>
+		<f:else>
+			<p><a href="#" class="local btn" data-state="0" data-uid="{result_spot.uid}" data-show="{result_spot.kat}"><i class="icon-pushpin"></i> Ich bin Local <i class="icon-minus-sign"></i></a></p>
+		</f:else>
+	</f:if>	
+	<f:if condition="{result_spot.favorite} < 1">
+		<f:then>
+			<p><a href="#" class="myFavorit btn" data-state="1" data-uid="{result_spot.uid}" data-show="{result_spot.kat}"><i class="icon-bookmark"></i> Mein Favorit</a></p>
+		</f:then>
+		<f:else>
+			<p><a href="#" class="myFavorit btn" data-state="0" data-uid="{result_spot.uid}" data-show="{result_spot.kat}"><i class="icon-bookmark"></i> Mein Favorit <i class="icon-minus-sign"></i></a></p>
+		</f:else>
+	</f:if>
+</f:then></f:security.ifAuthenticated>
+	<p class="defaultButtons">
+		<a href="#" class="goPreview btn gray" data-uid="{result_spot.uid}" data-show="{result_spot.kat}"><i class="icon-eye-open"></i> Vorschau</a>
+	    <a href="#" class="goDetail btn gray" data-uid="{result_spot.uid}" data-show="{result_spot.kat}"><i class="icon-search"></i> Detail</a>
+	</p>		
+</f:if>
+
+
+<f:if condition="{result_school}">
+
+<f:security.ifAuthenticated><f:then>
+
+	<f:if condition="{result_school.likes} < 1">
+		<f:then>
+<p><a href="#" class="iLike btn" data-state="1" data-uid="{result_school.uid}" data-show="{result_school.kat}"><i class="icon-heart"></i> Like</a></p>			
+		</f:then>
+		<f:else>
+			<p><a href="#" class="iLike btn" data-state="0" data-uid="{result_school.uid}" data-show="{result_school.kat}"><i class="icon-heart"></i> Like <i class="icon-minus-sign"></i></a></p>		
+		</f:else>
+	</f:if>
+	<f:if condition="{result_school.wasthere} < 1">
+		<f:then>
+				<p><a href="#" class="myVisitedPlace btn" data-state="1" data-uid="{result_school.uid}" data-show="{result_school.kat}"><i class="icon-flag"></i> Ich war hier</a></p>
+		</f:then>
+		<f:else>
+			<p><a href="#" class="myVisitedPlace btn" data-state="0" data-uid="{result_school.uid}" data-show="{result_school.kat}"><i class="icon-flag"></i> Ich war hier <i class="icon-minus-sign"></i></a></p>
+		</f:else>
+	</f:if>	
+	<f:if condition="{result_school.student} < 1">
+		<f:then>
+			<p><a href="#" class="myStudy btn" data-state="1" data-uid="{result_school.uid}" data-show="{result_school.kat}"><i class="icon-group"></i> Ich war Schüler</a></p>
+		</f:then>
+		<f:else>
+			<p><a href="#" class="myStudy btn" data-state="0" data-uid="{result_school.uid}" data-show="{result_school.kat}"><i class="icon-group"></i> Ich war Schüler <i class="icon-minus-sign"></i></a></p>
+		</f:else>
+	</f:if>	
+	<f:if condition="{result_school.favorite} < 1">
+		<f:then>
+			<p><a href="#" class="myFavorit btn" data-state="1" data-uid="{result_school.uid}" data-show="{result_school.kat}"><i class="icon-bookmark"></i> Mein Favorit</a></p>
+		</f:then>
+		<f:else>
+			<p><a href="#" class="myFavorit btn" data-state="0" data-uid="{result_school.uid}" data-show="{result_school.kat}"><i class="icon-bookmark"></i> Mein Favorit <i class="icon-minus-sign"></i></a></p>
+		</f:else>
+	</f:if>
+	
+</f:then></f:security.ifAuthenticated>
+	<p class="defaultButtons">
+		<a href="#" class="goPreview btn gray" data-uid="{result_school.uid}" data-show="{result_school.kat}"><i class="icon-eye-open"></i> Vorschau</a>
+	    <a href="#" class="goDetail btn gray" data-uid="{result_school.uid}" data-show="{result_school.kat}"><i class="icon-search"></i> Detail</a>
+	</p>		
+</f:if>
+
+
+
+
+<f:if condition="{result_schule}">
+
+<f:security.ifAuthenticated><f:then>
+
+	<f:if condition="{result_schule.likes} < 1">
+		<f:then>
+<p><a href="#" class="iLike btn" data-state="1" data-uid="{result_schule.uid}" data-show="{result_schule.kat}"><i class="icon-heart"></i> Like</a></p>			
+		</f:then>
+		<f:else>
+			<p><a href="#" class="iLike btn" data-state="0" data-uid="{result_schule.uid}" data-show="{result_schule.kat}"><i class="icon-heart"></i> Like <i class="icon-minus-sign"></i></a></p>		
+		</f:else>
+	</f:if>
+	<f:if condition="{result_schule.wasthere} < 1">
+		<f:then>
+				<p><a href="#" class="myVisitedPlace btn" data-state="1" data-uid="{result_schule.uid}" data-show="{result_schule.kat}"><i class="icon-flag"></i> Ich war hier</a></p>
+		</f:then>
+		<f:else>
+			<p><a href="#" class="myVisitedPlace btn" data-state="0" data-uid="{result_schule.uid}" data-show="{result_schule.kat}"><i class="icon-flag"></i> Ich war hier <i class="icon-minus-sign"></i></a></p>
+		</f:else>
+	</f:if>	
+	<f:if condition="{result_schule.student} < 1">
+		<f:then>
+			<p><a href="#" class="myStudy btn" data-state="1" data-uid="{result_schule.uid}" data-show="{result_schule.kat}"><i class="icon-group"></i> Ich war Schüler</a></p>
+		</f:then>
+		<f:else>
+			<p><a href="#" class="myStudy btn" data-state="0" data-uid="{result_schule.uid}" data-show="{result_schule.kat}"><i class="icon-group"></i> Ich war Schüler <i class="icon-minus-sign"></i></a></p>
+		</f:else>
+	</f:if>	
+	<f:if condition="{result_schule.favorite} < 1">
+		<f:then>
+			<p><a href="#" class="myFavorit btn" data-state="1" data-uid="{result_schule.uid}" data-show="{result_schule.kat}"><i class="icon-bookmark"></i> Mein Favorit</a></p>
+		</f:then>
+		<f:else>
+			<p><a href="#" class="myFavorit btn" data-state="0" data-uid="{result_schule.uid}" data-show="{result_schule.kat}"><i class="icon-bookmark"></i> Mein Favorit <i class="icon-minus-sign"></i></a></p>
+		</f:else>
+	</f:if>
+	
+</f:then></f:security.ifAuthenticated>
+	<p class="defaultButtons">
+		<a href="#" class="goPreview btn gray" data-uid="{result_schule.uid}" data-show="{result_schule.kat}"><i class="icon-eye-open"></i> Vorschau</a>
+	    <a href="#" class="goDetail btn gray" data-uid="{result_schule.uid}" data-show="{result_schule.kat}"><i class="icon-search"></i> Detail</a>
+	</p>		
+</f:if>
+
+
+<f:if condition="{result_user}">
+<f:security.ifAuthenticated><f:then>
+
+	<f:if condition="{result_user.likes} < 1">
+		<f:then>
+<p><a href="#" class="iLike btn" data-state="1" data-uid="{result_user.uid}" data-show="{result_user.kat}"><i class="icon-heart"></i> Like</a></p>			
+		</f:then>
+		<f:else>
+			<p><a href="#" class="iLike btn" data-state="0" data-uid="{result_user.uid}" data-show="{result_user.kat}"><i class="icon-heart"></i> Like <i class="icon-minus-sign"></i></a></p>		
+		</f:else>
+	</f:if>
+	<f:if condition="{result_user.favorite} < 1">
+		<f:then>
+			<p><a href="#" class="myFavorit btn" data-state="1" data-uid="{result_user.uid}" data-show="{result_user.kat}"><i class="icon-bookmark"></i> Mein Favorit</a></p>
+		</f:then>
+		<f:else>
+			<p><a href="#" class="myFavorit btn" data-state="0" data-uid="{result_user.uid}" data-show="{result_user.kat}"><i class="icon-bookmark"></i> Mein Favorit <i class="icon-minus-sign"></i></a></p>
+		</f:else>
+	</f:if>
+		
+</f:then></f:security.ifAuthenticated>
+	<p class="defaultButtons">
+		<a href="#" class="goPreview btn gray" data-uid="{result_user.uid}" data-show="{result_user.kat}"><i class="icon-eye-open"></i> Vorschau</a>
+	    <a href="#" class="goDetail btn gray" data-uid="{result_user.uid}" data-show="{result_user.kat}"><i class="icon-search"></i> Detail</a>
+	</p>
+</f:if>
+
+
+</f:section>

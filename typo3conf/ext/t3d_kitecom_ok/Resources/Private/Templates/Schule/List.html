@@ -1,0 +1,86 @@
+<f:layout name="Default" />
+
+This Template is responsible for creating a table of domain objects.
+
+If you modify this template, do not forget to change the overwrite settings
+in /Configuration/ExtensionBuilder/settings.yaml:
+  Resources:
+    Private:
+      Templates:
+        List.html: keep
+
+Otherwise your changes will be overwritten the next time you save the extension in the extension builder
+
+<f:section name="main">
+<h1>Listing for Schule</h1>
+
+<f:flashMessages />
+
+<table  class="tx_t3dkitecom" >
+	<tr>
+		<th><f:translate key="tx_t3dkitecom_domain_model_schule.name" /></th>
+		<th><f:translate key="tx_t3dkitecom_domain_model_schule.beschreibung" /></th>
+		<th><f:translate key="tx_t3dkitecom_domain_model_schule.ort" /></th>
+		<th><f:translate key="tx_t3dkitecom_domain_model_schule.lat" /></th>
+		<th><f:translate key="tx_t3dkitecom_domain_model_schule.lng" /></th>
+		<th><f:translate key="tx_t3dkitecom_domain_model_schule.rettungsdienst" /></th>
+		<th><f:translate key="tx_t3dkitecom_domain_model_schule.strandhelfer" /></th>
+		<th><f:translate key="tx_t3dkitecom_domain_model_schule.prokiter" /></th>
+		<th><f:translate key="tx_t3dkitecom_domain_model_schule.kitesafari" /></th>
+		<th><f:translate key="tx_t3dkitecom_domain_model_schule.flachwasser" /></th>
+		<th><f:translate key="tx_t3dkitecom_domain_model_schule.fotoservice" /></th>
+		<th><f:translate key="tx_t3dkitecom_domain_model_schule.lager" /></th>
+		<th><f:translate key="tx_t3dkitecom_domain_model_schule.materialmiete" /></th>
+		<th><f:translate key="tx_t3dkitecom_domain_model_schule.stehrevier" /></th>
+		<th><f:translate key="tx_t3dkitecom_domain_model_schule.shop" /></th>
+		<th><f:translate key="tx_t3dkitecom_domain_model_schule.schulungsmaterial" /></th>
+		<th><f:translate key="tx_t3dkitecom_domain_model_schule.verleihmaterial" /></th>
+		<th><f:translate key="tx_t3dkitecom_domain_model_schule.media" /></th>
+		<th><f:translate key="tx_t3dkitecom_domain_model_schule.team" /></th>
+		<th><f:translate key="tx_t3dkitecom_domain_model_schule.tel" /></th>
+		<th><f:translate key="tx_t3dkitecom_domain_model_schule.email" /></th>
+		<th><f:translate key="tx_t3dkitecom_domain_model_schule.hauptmarke" /></th>
+		<th><f:translate key="tx_t3dkitecom_domain_model_schule.hauptbild" /></th>
+		<th><f:translate key="tx_t3dkitecom_domain_model_schule.webcam" /></th>
+		<th><f:translate key="tx_t3dkitecom_domain_model_schule.stadt" /></th>
+		<th><f:translate key="tx_t3dkitecom_domain_model_schule.land" /></th>
+		<th> </th>
+		<th> </th>
+	</tr>
+
+	<f:for each="{schules}" as="schule">
+		<tr>
+			<td><f:link.action action="show" arguments="{schule : schule}"> {schule.name}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{schule : schule}"> {schule.beschreibung}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{schule : schule}"> {schule.ort}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{schule : schule}"> {schule.lat}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{schule : schule}"> {schule.lng}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{schule : schule}"> {schule.rettungsdienst}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{schule : schule}"> {schule.strandhelfer}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{schule : schule}"> {schule.prokiter}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{schule : schule}"> {schule.kitesafari}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{schule : schule}"> {schule.flachwasser}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{schule : schule}"> {schule.fotoservice}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{schule : schule}"> {schule.lager}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{schule : schule}"> {schule.materialmiete}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{schule : schule}"> {schule.stehrevier}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{schule : schule}"> {schule.shop}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{schule : schule}"> {schule.schulungsmaterial}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{schule : schule}"> {schule.verleihmaterial}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{schule : schule}"> {schule.media}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{schule : schule}"> {schule.team}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{schule : schule}"> {schule.tel}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{schule : schule}"> {schule.email}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{schule : schule}"> {schule.hauptmarke}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{schule : schule}"> {schule.hauptbild}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{schule : schule}"> {schule.webcam}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{schule : schule}"> {schule.stadt}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{schule : schule}"> {schule.land}</f:link.action></td>
+			<td><f:link.action action="edit" arguments="{schule : schule}">Edit</f:link.action></td>
+			<td><f:link.action action="delete" arguments="{schule : schule}">Delete</f:link.action></td>
+		</tr>
+	</f:for>
+</table>
+
+<f:link.action action="new">New Schule</f:link.action>
+</f:section>

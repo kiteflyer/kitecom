@@ -1,0 +1,87 @@
+<f:layout name="Default" />
+
+This Template is responsible for creating a table of domain objects.
+
+If you modify this template, do not forget to change the overwrite settings
+in /Configuration/ExtensionBuilder/settings.yaml:
+  Resources:
+    Private:
+      Templates:
+        List.html: keep
+
+Otherwise your changes will be overwritten the next time you save the extension in the extension builder
+
+
+<f:section name="main">
+
+
+<div class="row-fluid">
+		<div id="newEntry" class="span11">
+			
+			<div id="newSchule" class="contentbox span3 shadow">
+				<h1 class="big shadow"><i class="icon-bullhorn pink headerbox"></i>Neue Schule</h1>			
+				
+				<h2>Bist du Inhaber einer Kiteschule?</h2>
+				<div class="text">
+					Dann erfasse deine Schule jetzt hier gratis und gewinne dadurch viele weitere Kunden.
+				</div>				
+				<img src="fileadmin/templates/img/newentry_school.jpg" />
+				<div class="clear"></div>
+				
+				<f:security.ifAuthenticated>
+					<f:then>
+						<f:link.action pageUid="9" controller="Schule" action="new" class="btn-orange pull-right"><i class="icon-plus-sign"></i> Neue Schule</f:link.action>
+					</f:then>
+					<f:else>
+						<div class="usernav"><a class="btn-orange pull-right" href="#login_window" data-toggle="modal" role="button"><i class="icon-plus-sign"></i> Neue Schule</a></div>
+					</f:else>
+				</f:security.ifAuthenticated>
+				
+				<div class="contentbox_border"></div>
+			</div>
+
+			<div id="newSpot" class="contentbox span3 shadow">
+				<h1 class="big shadow"><i class="icon-map-marker green headerbox"></i>Neuer Spot</h1>			
+
+				<h2>Kennst du einen tollen Kitespot?</h2>				
+				<div class="text">
+					Hier kannst du den Spot der ganzen Kiterszene mitteilen. Wir danken dir bereits jetzt für deine Hilfe.				
+				</div>
+				<img src="fileadmin/templates/img/newentry_spot.jpg" />
+				<div class="clear"></div>
+				
+				<f:security.ifAuthenticated>
+					<f:then>
+						<f:link.action pageUid="8" controller="Spot" action="new" class="btn-orange pull-right"><i class="icon-plus-sign"></i> Neuer Spot</f:link.action>
+					</f:then>
+					<f:else>
+						<div class="usernav"><a class="btn-orange pull-right" href="#login_window" data-toggle="modal" role="button"><i class="icon-plus-sign"></i> Neuer Spot</a></div>
+					</f:else>
+				</f:security.ifAuthenticated>				
+				
+					
+				</div>
+				<div class="contentbox_border"></div>
+			</div>
+
+		</div>
+		
+</div>
+
+<script>
+jQuery(function() {
+ 
+		//Slider NewEntry
+ $.backstretch([
+ 	"fileadmin/templates/img/bg_newEntry1.jpg",
+ 	"fileadmin/templates/img/bg_newEntry2.jpg",
+ 	"fileadmin/templates/img/bg_newEntry3.jpg"
+ 	], {duration: 6000, fade: 1250});
+
+});				
+</script>
+
+</f:section>
+
+
+

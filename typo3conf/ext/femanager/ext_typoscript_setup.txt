@@ -1,0 +1,32 @@
+config.tx_extbase {
+	persistence {
+		classes {
+			In2\Femanager\Domain\Model\User {
+				mapping {
+					tableName = fe_users
+					recordType =
+				}
+			}
+			In2\Femanager\Domain\Model\UserGroup {
+				mapping {
+					tableName = fe_groups
+					recordType =
+				}
+			}
+		}
+	}
+}
+
+
+#################
+# Backend Module
+#################
+module.tx_femanager {
+	view {
+		templateRootPath = EXT:femanager/Resources/Private/Templates/
+		partialRootPath = EXT:femanager/Resources/Private/Partials/
+		layoutRootPath = EXT:femanager/Resources/Private/Layouts/
+	}
+	settings {
+	}
+}

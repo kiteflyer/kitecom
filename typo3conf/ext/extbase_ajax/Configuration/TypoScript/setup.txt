@@ -1,0 +1,71 @@
+# include JS for wrapper functions
+page.includeJS {
+	file246 = EXT:extbase_ajax/Resources/Public/Scripts/extbase_ajax.js
+	file249 = EXT:extbase_ajax/Resources/Public/Scripts/jquery.blockui.js
+	file252 = EXT:extbase_ajax/Resources/Public/Scripts/jquery.getUrlParam.js
+}
+
+page.includeCSS {
+   file57 = EXT:extbase_ajax/Resources/Public/Styles/jquery-ui-1.8.18.custom.css
+}
+
+
+page.headerData.10 = TEXT
+page.headerData.10.value (
+	<script>
+		extbaseAjax = {
+			type: {$plugin.tx_extbaseajax.pageType},
+			prefix: 'tx_{$plugin.tx_extbaseajax.extensionName}_{$plugin.tx_extbaseajax.pluginName}',
+			buttonsave: '{$plugin.tx_extbaseajax.buttonsave}',
+			buttoncancel: '{$plugin.tx_extbaseajax.buttoncancel}',
+			buttonok: '{$plugin.tx_extbaseajax.buttonok}',
+			buttonyes: '{$plugin.tx_extbaseajax.buttonyes}',
+			buttonno: '{$plugin.tx_extbaseajax.buttonno}',
+			confirmtitle: '{$plugin.tx_extbaseajax.confirmtitle}',
+		}
+	</script>
+)
+
+
+# Ajax configuration
+ajax = PAGE
+ajax {
+	#disable all headers
+	config {
+		disableAllHeaderCode = {$plugin.tx_extbaseajax.disableAllHeaderCode}
+		disablePrefixComment = {$plugin.tx_extbaseajax.disablePrefixComment}
+		additionalHeaders = {$plugin.tx_extbaseajax.additionalHeaders}
+		xhtml_cleaning = {$plugin.tx_extbaseajax.xhtml_cleaning}
+		no_cache = {$plugin.tx_extbaseajax.no_cache}
+		admPanel = {$plugin.tx_extbaseajax.admPanel}
+
+		language = {$plugin.tx_extbaseajax.language}
+		locale_all = {$plugin.tx_extbaseajax.locale_all}
+		metaCharset = {$plugin.tx_extbaseajax.metaCharset}
+		sys_language_uid = {$plugin.tx_extbaseajax.sys_language_uid}
+	}
+}
+
+[globalVar = GP:tx_{$plugin.tx_extbaseajax.extensionName}_{$plugin.tx_extbaseajax.pluginName}|format=html]
+	ajax.config.additionalHeaders = Content-Type:text/html
+[global]
+
+[globalVar = GP:tx_{$plugin.tx_extbaseajax.extensionName}_{$plugin.tx_extbaseajax.pluginName}|format=xml]
+	ajax.config.additionalHeaders = Content-Type:application/xml
+[global]
+
+[globalVar = GP:tx_{$plugin.tx_extbaseajax.extensionName}_{$plugin.tx_extbaseajax.pluginName}|format=json]
+	ajax.config.additionalHeaders = Content-Type:application/json
+[global]
+
+[globalVar = GP:tx_{$plugin.tx_extbaseajax.extensionName}_{$plugin.tx_extbaseajax.pluginName}|format=txt]
+	ajax.config.additionalHeaders = Content-Type:application/txt
+[global]
+
+
+# actual pagetype
+AJAX_Plugintyp < ajax
+AJAX_Plugintyp {
+	10 < tt_content.list.20.{$plugin.tx_extbaseajax.extensionName}_{$plugin.tx_extbaseajax.pluginName}
+	typeNum = {$plugin.tx_extbaseajax.pageType}
+}

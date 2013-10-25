@@ -1,0 +1,25 @@
+<f:layout name="Default" />
+
+<f:section name="main">
+
+<f:if condition="{result_spot}">
+		<i class="icon-heart"></i> {result_spot.likes}
+		<i class="icon-flag"></i> {result_spot.wasthere}
+		<i class="icon-pushpin"></i> {result_spot.local}
+		<i class="icon-bookmark"></i> {result_spot.favorite}
+</f:if>
+
+<f:if condition="{result_school}">
+		<i class="icon-heart"></i> {result_school.likes}
+		<i class="icon-flag"></i> {result_school.wasthere}
+		<i class="icon-group"></i> {result_school.student}
+		<i class="icon-bookmark"></i> {result_school.favorite}
+</f:if>
+
+<f:if condition="{result_user}">
+		<i class="icon-heart"></i> {result_user.likes}
+		<i class="icon-bookmark"></i> {result_user.favorite}
+</f:if>
+
+
+</f:section>

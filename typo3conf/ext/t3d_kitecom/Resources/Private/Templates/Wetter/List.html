@@ -1,0 +1,57 @@
+<f:layout name="Default" />
+
+This Template is responsible for creating a table of domain objects.
+
+If you modify this template, do not forget to change the overwrite settings
+in /Configuration/ExtensionBuilder/settings.yaml:
+  Resources:
+    Private:
+      Templates:
+        List.html: keep
+
+Otherwise your changes will be overwritten the next time you save the extension in the extension builder
+
+<f:section name="main">
+
+<f:if condition="{wetter}"
+
+
+            <h1>{wetter.locality}</h1>
+
+            <h2>The Weather Today at {wetter.weather_now.weatherTime}</h2>
+<f:comment>
+            <div class="weather_now">
+                <span style="float:right;"><img src="<?php echo $response->weather_now['weatherIcon']; ?>" /></span>
+                <strong>DESCRIPTION:</strong> <?php echo $response->weather_now['weatherDesc']; ?><br />
+                <strong>TEMPERATURE:</strong> <?php echo $response->weather_now['weatherTemp']; ?><br />
+                <strong>WIND SPEED:</strong> <?php echo $response->weather_now['windSpeed']; ?><br />
+                <strong>PRECIPITATION:</strong> <?php echo $response->weather_now['precipitation']; ?><br />
+                <strong>HUMIDITY:</strong> <?php echo $response->weather_now['humidity']; ?><br />
+                <strong>VISIBILITY:</strong> <?php echo $response->weather_now['visibility']; ?><br />
+                <strong>PRESSURE:</strong> <?php echo $response->weather_now['pressure']; ?><br />
+                <strong>CLOUD COVER:</strong> <?php echo $response->weather_now['cloudcover']; ?><br />
+            </div>
+
+            <h3>Weather Forecast</h3>
+
+            foreach ($response->weather_forecast as $weather) {
+                <div class="weather_forecast">
+                    <div class="block block1">
+                        <span class="icon"><img src="<?php echo $weather['weatherIcon']; ?>" /></span>
+                    </div>
+                    <div class="block block2">
+                        <span class="wday"><?php echo $weather['weatherDay']; ?></span>
+                        <span class="date"><?php echo $weather['weatherDate']; ?> </span>
+                        <span class="desc"><?php echo $weather['weatherDesc']; ?></span>
+                        <span class="wind">Wind: <?php echo $weather['windDirection']; ?> at <?php echo $weather['windSpeed']; ?></span>
+                    </div>
+                    <div class="block block3">
+                        <span class="tmax"><?php echo $weather['tempMax']; ?></span>
+                        <span class="tmin"><?php echo $weather['tempMin']; ?></span>
+                    </div>
+                </div>
+                }
+</f:comment>
+</f:if>
+
+</f:section>

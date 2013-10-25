@@ -1,0 +1,112 @@
+<div class="row-fluid step1">
+	<div id="standort" class="contentbox span6 shadow">
+		<h2 class="small shadow gray">Standort</h2>
+
+		<label>Standort der Schule <span class="required">*</span></label>
+		<f:render partial="Schule/MyMap"/>
+		<f:form.hidden property="lat" id="lat" />
+		<f:form.hidden property="lng" id="lng" />
+		<br />
+			
+
+			<label for="adresse"><f:translate key="tx_t3dkitecom_domain_model_schule.adresse" /></label>
+			<f:form.textarea cols="20" rows="3" property="adresse" id="adresse"  />
+
+			<f:form.hidden property="ort" id="place" />
+			<!--<label for="stadt"><f:translate key="tx_t3dkitecom_domain_model_schule.stadt"  /> <span class="required">*</span></label>-->
+			<f:form.hidden property="stadt" id="city" />
+			<!--<label for="land"><f:translate key="tx_t3dkitecom_domain_model_schule.land" /> <span class="required">*</span></label>-->
+			<f:form.hidden property="land" id="country" />
+
+		<div class="contentbox_border"></div>
+	</div>
+		
+	
+	<div id="infos" class="contentbox span6 shadow">
+		<h2 class="small shadow gray">Infos</h2>
+	
+		<label for="name"><f:translate key="tx_t3dkitecom_domain_model_schule.name" /> <span class="required">*</span></label>
+		<f:form.textfield property="name" id="name"  />
+
+		<label for="beschreibung"><f:translate key="tx_t3dkitecom_domain_model_schule.beschreibung" /> <span class="required">*</span></label>	
+		<f:form.textarea property="beschreibung" cols="20" rows="5" />		
+		
+		<label for="tel"><f:translate key="tx_t3dkitecom_domain_model_schule.tel" /></label>
+		<f:form.textfield property="tel" />
+		
+		<label for="email"><f:translate key="tx_t3dkitecom_domain_model_schule.email" /></label>
+		<f:form.textfield property="email" />
+		
+		<label for="url"><f:translate key="tx_t3dkitecom_domain_model_schule.url" /></label>
+		<f:form.textfield property="url" id="url" />		
+		
+		<label for="webcam"><f:translate key="tx_t3dkitecom_domain_model_schule.webcam" /></label>
+		<f:form.textfield property="webcam" placeholder="http://www.yourdomain.com/webcam/..." />		
+		
+		<div class="contentbox_border"></div>	
+	</div>
+	
+</div>
+
+<div class="row-fluid step2">
+	<div id="details" class="contentbox edit span12 shadow">
+		<h2 class="small shadow gray">Details</h2>
+		<div class="row-fluid">
+			<div class="span6">
+				<h3>Marken</h3>
+				<label for="hauptmarke"><f:translate key="tx_t3dkitecom_domain_model_schule.hauptmarke" /></label>
+				<f:form.textfield property="hauptmarke" />
+				
+				<label for="schulungsmaterial"><f:translate key="tx_t3dkitecom_domain_model_schule.schulungsmaterial" /></label>
+				<f:form.textfield property="schulungsmaterial" />
+				
+				<label for="verleihmaterial"><f:translate key="tx_t3dkitecom_domain_model_schule.verleihmaterial" /></label>
+				<f:form.textfield property="verleihmaterial" />	
+			</div>
+			<div class="span6">
+
+					<div class="span12"><h3>Eigenschaften</h3></div>
+				    <div class="controls span5">
+				    				<div class="control-group">
+						<label for="rettungsdienst"><f:form.checkbox property="rettungsdienst" id="rettungsdienst" value="1" /> <f:translate key="tx_t3dkitecom_domain_model_schule.rettungsdienst" /></label>
+						<label for="strandhelfer"><f:form.checkbox property="strandhelfer" id="strandhelfer" value="1" /> <f:translate key="tx_t3dkitecom_domain_model_schule.strandhelfer" /></label>
+						<label for="prokiter"><f:form.checkbox property="prokiter" value="1" /> <f:translate key="tx_t3dkitecom_domain_model_schule.prokiter" /></label>
+						<label for="kitesafari"><f:form.checkbox property="kitesafari" value="1" /> <f:translate key="tx_t3dkitecom_domain_model_schule.kitesafari" /></label>
+						<label for="flachwasser"><f:form.checkbox property="flachwasser" value="1" /> <f:translate key="tx_t3dkitecom_domain_model_schule.flachwasser" /></label></div>
+				    </div>
+				    <div class="controls span5">
+				    				<div class="control-group">
+						<label for="fotoservice"><f:form.checkbox property="fotoservice" value="1" /> <f:translate key="tx_t3dkitecom_domain_model_schule.fotoservice" /></label>				    
+						<label for="lager"><f:form.checkbox property="lager" value="1" /> <f:translate key="tx_t3dkitecom_domain_model_schule.lager" /></label>
+						<label for="materialmiete"><f:form.checkbox property="materialmiete" value="1" /> <f:translate key="tx_t3dkitecom_domain_model_schule.materialmiete" /></label>
+						<label for="stehrevier"><f:form.checkbox property="stehrevier" value="1" /> <f:translate key="tx_t3dkitecom_domain_model_schule.stehrevier" /></label>
+						<label for="shop"><f:form.checkbox property="shop" value="1" /> <f:translate key="tx_t3dkitecom_domain_model_schule.shop" /></label>
+				    </div>
+				    </div>				    
+		
+			</div>	
+		</div>
+		<div class="contentbox_border"></div>			
+	</div>
+</div>
+
+<div class="row-fluid step3">
+	<div id="details" class="contentbox edit span12 shadow">
+		<div class="row-fluid">
+
+			<div class="span6">
+					<h3>Sprachen</h3>
+					  <f:form.select property="sprachen" name="sprachen" multiple="true" options="{sprachen}" value="{object.sprachen}" class="chzn-select" optionLabelField="name"  optionValueField="value" />
+			</div>		
+			<div class="span6">
+					<h3>Öffnungszeiten</h3>
+					<f:comment><f:form.select property="zeiten" name="zeiten" multiple="true" options="{zeiten}" value="{object.zeiten}" class="chzn-select" optionLabelField="name"  optionValueField="value" /></f:comment>
+					<f:form.checkbox property="zeiten" value="01" /> Januar
+					<f:form.checkbox property="zeiten" value="02" /> Februar
+					<f:form.checkbox property="zeiten" value="03" /> März			
+			</div>					
+		</div>
+		<div class="contentbox_border"></div>			
+	</div>
+</div>
+
